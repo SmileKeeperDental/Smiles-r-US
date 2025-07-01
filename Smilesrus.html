@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmilesRUs Dentistry - Your Brightest Smile Starts Here</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light blue-gray background */
+        }
+        /* Custom scroll-behavior for smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header Section -->
+    <header class="bg-white shadow-lg py-4 px-6 md:px-12 sticky top-0 z-50 rounded-b-xl">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <i class="fas fa-tooth text-blue-500 text-3xl"></i>
+                <span class="text-2xl font-bold text-blue-700">SmilesRUs Dentistry</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-600 hover:text-blue-500 font-medium transition duration-300">Home</a>
+                <a href="#why-choose-us" class="text-gray-600 hover:text-blue-500 font-medium transition duration-300">Why Choose Us</a>
+                <a href="#additional-pages" class="text-gray-600 hover:text-blue-500 font-medium transition duration-300">Services & Coupons</a>
+                <a href="#about" class="text-gray-600 hover:text-blue-500 font-medium transition duration-300">About Us</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-500 font-medium transition duration-300">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-white bg-opacity-95 z-40 flex flex-col items-center justify-center space-y-6">
+            <button id="close-mobile-menu" class="absolute top-6 right-6 text-gray-600 focus:outline-none">
+                <i class="fas fa-times text-3xl"></i>
+            </button>
+            <a href="#home" class="text-gray-800 text-2xl font-semibold hover:text-blue-500 transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Home</a>
+            <a href="#why-choose-us" class="text-gray-800 text-2xl font-semibold hover:text-blue-500 transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Why Choose Us</a>
+            <a href="#additional-pages" class="text-gray-800 text-2xl font-semibold hover:text-blue-500 transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Services & Coupons</a>
+            <a href="#about" class="text-gray-800 text-2xl font-semibold hover:text-blue-500 transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">About Us</a>
+            <a href="#contact" class="text-gray-800 text-2xl font-semibold hover:text-blue-500 transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-gradient-to-r from-blue-500 to-teal-400 text-white py-20 md:py-32 overflow-hidden rounded-b-3xl">
+        <div class="absolute inset-0 opacity-20" style="background-image: url('https://placehold.co/1920x1080/ffffff/000000?text=Dental+Background'); background-size: cover; background-position: center;"></div>
+        <div class="container mx-auto px-6 md:px-12 relative z-10 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 drop-shadow-lg">
+                Your Brightest Smile Starts Here
+            </h1>
+            <p class="text-lg md:text-xl mb-10 max-w-2xl mx-auto opacity-90">
+                Experience compassionate care and advanced dental solutions for a healthier, happier you.
+            </p>
+            <a href="#contact" class="bg-white text-blue-600 hover:bg-blue-100 px-8 py-4 rounded-full text-lg font-semibold shadow-xl transition duration-300 transform hover:scale-105">
+                Book An Appointment
+            </a>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose-us" class="py-16 md:py-24 bg-gray-100 rounded-t-3xl">
+        <div class="container mx-auto px-6 md:px-12 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-12">Why Choose SmilesRUs Dentistry?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature Card 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                    <i class="fas fa-hand-holding-heart text-blue-500 text-5xl mb-6"></i>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Compassionate Care</h3>
+                    <p class="text-gray-600">Our team is dedicated to providing gentle, empathetic care, ensuring your comfort at every visit.</p>
+                </div>
+                <!-- Feature Card 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                    <i class="fas fa-microscope text-teal-500 text-5xl mb-6"></i>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Advanced Technology</h3>
+                    <p class="text-gray-600">We utilize state-of-the-art equipment and techniques for precise diagnoses and effective treatments.</p>
+                </div>
+                <!-- Feature Card 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+                    <i class="fas fa-users text-purple-500 text-5xl mb-6"></i>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Experienced Professionals</h3>
+                    <p class="text-gray-600">Our highly skilled dentists and staff are committed to ongoing education and excellence.</p>
+                </div>
+            </div>
+            <div class="mt-12">
+                <a href="#about" class="bg-blue-700 text-white hover:bg-blue-800 px-8 py-4 rounded-full text-lg font-semibold shadow-xl transition duration-300 transform hover:scale-105">
+                    Learn More About Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16 md:py-24 container mx-auto px-6 md:px-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-6">About SmilesRUs Dentistry</h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    At SmilesRUs Dentistry, we are dedicated to providing exceptional dental care in a comfortable and friendly environment. Our team of experienced professionals uses the latest technology and techniques to ensure your oral health is in the best hands.
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+                    We believe in personalized care, taking the time to understand your needs and create a treatment plan that's right for you. From routine check-ups to cosmetic enhancements, we're here to help you achieve and maintain a beautiful, healthy smile for life.
+                </p>
+            </div>
+            <div class="order-1 md:order-2 flex justify-center">
+                <img src="https://placehold.co/600x400/a7f3d0/065f46?text=Happy+Patients" alt="About Us Image" class="rounded-2xl shadow-xl w-full max-w-md object-cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services & Coupons Section (New Tabbed Content) -->
+    <section id="additional-pages" class="py-16 md:py-24 bg-blue-50 rounded-t-3xl">
+        <div class="container mx-auto px-6 md:px-12 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-12">Explore Our Offerings</h2>
+
+            <div class="max-w-6xl mx-auto bg-white p-8 rounded-2xl shadow-lg">
+                <!-- Tab Buttons -->
+                <div class="flex flex-wrap justify-center border-b border-gray-200 mb-8">
+                    <button class="tab-button py-3 px-6 text-lg font-medium text-gray-600 hover:text-blue-700 hover:border-blue-700 border-b-2 border-transparent transition duration-300 active-tab" data-tab="our-services-tab">
+                        Our Services
+                    </button>
+                    <button class="tab-button py-3 px-6 text-lg font-medium text-gray-600 hover:text-blue-700 hover:border-blue-700 border-b-2 border-transparent transition duration-300" data-tab="dental-coupons-tab">
+                        Dental Coupons
+                    </button>
+                </div>
+
+                <!-- Tab Content: Our Services -->
+                <div id="our-services-tab" class="tab-content active-content">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-8">Comprehensive Dental Care for Your Family</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Service Card 1 -->
+                        <div class="bg-gray-50 p-6 rounded-xl shadow-md">
+                            <i class="fas fa-stethoscope text-blue-500 text-4xl mb-4"></i>
+                            <h4 class="text-xl font-semibold text-gray-800 mb-2">General Dentistry</h4>
+                            <p class="text-gray-600 text-sm">Routine check-ups, professional cleanings, fluoride treatments, and dental sealants to maintain optimal oral health and prevent future issues.</p>
+                        </div>
+                        <!-- Service Card 2 -->
+                        <div class="bg-gray-50 p-6 rounded-xl shadow-md">
+                            <i class="fas fa-star text-yellow-500 text-4xl mb-4"></i>
+                            <h4 class="text-xl font-semibold text-gray-800 mb-2">Cosmetic Dentistry</h4>
+                            <p class="text-gray-600 text-sm">Transform your smile with teeth whitening, porcelain veneers, dental bonding, and smile makeovers for a radiant appearance.</p>
+                        </div>
+                        <!-- Service Card 3 -->
+                        <div class="bg-gray-50 p-6 rounded-xl shadow-md">
+                            <i class="fas fa-crown text-gray-500 text-4xl mb-4"></i>
+                            <h4 class="text-xl font-semibold text-gray-800 mb-2">Restorative Dentistry</h4>
+                            <p class="text-gray-600 text-sm">Restore damaged or missing teeth with durable fillings, crowns, bridges, dental implants, and comfortable dentures.</p>
+                        </div>
+                        <!-- Service Card 4 -->
+                        <div class="bg-gray-50 p-6 rounded-xl shadow-md">
+                            <i class="fas fa-child text-pink-500 text-4xl mb-4"></i>
+                            <h4 class="text-xl font-semibold text-gray-800 mb-2">Pediatric Dentistry</h4>
+                            <p class="text-gray-600 text-sm">Specialized, gentle dental care for infants, children, and adolescents, focusing on early prevention and healthy habits.</p>
+                        </div>
+                        <!-- Service Card 5 -->
+                        <div class="bg-gray-50 p-6 rounded-xl shadow-md">
+                            <i class="fas fa-align-left text-purple-500 text-4xl mb-4"></i>
+                            <h4 class="text-xl font-semibold text-gray-800 mb-2">Orthodontics</h4>
+                            <p class="text-gray-600 text-sm">Achieve a perfectly aligned bite and straight teeth with traditional braces, clear aligners (Invisalign), and retainers.</p>
+                        </div>
+                        <!-- Service Card 6 -->
+                        <div class="bg-gray-50 p-6 rounded-xl shadow-md">
+                            <i class="fas fa-syringe text-red-500 text-4xl mb-4"></i>
+                            <h4 class="text-xl font-semibold text-gray-800 mb-2">Emergency Dental Care</h4>
+                            <p class="text-gray-600 text-sm">Immediate attention for dental emergencies like severe toothaches, broken teeth, or knocked-out teeth to alleviate pain and prevent further damage.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab Content: Dental Coupons -->
+                <div id="dental-coupons-tab" class="tab-content hidden">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-8">Exclusive Savings for Your Smile!</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Coupon Card 1 -->
+                        <div class="bg-gradient-to-r from-green-400 to-green-600 text-white p-6 rounded-xl shadow-lg relative overflow-hidden">
+                            <div class="absolute top-0 left-0 bg-white bg-opacity-20 w-24 h-24 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+                            <div class="absolute bottom-0 right-0 bg-white bg-opacity-20 w-24 h-24 rounded-full translate-x-1/2 translate-y-1/2"></div>
+                            <h4 class="text-3xl font-bold mb-2">20% Off Your First Visit!</h4>
+                            <p class="text-lg mb-4">New patients enjoy a discount on their initial comprehensive exam and cleaning.</p>
+                            <div class="border-t border-dashed border-white border-opacity-70 pt-4 mt-4">
+                                <p class="font-mono text-xl tracking-wider">CODE: SMILE2025</p>
+                                <p class="text-sm mt-1 opacity-80">Valid until: 12/31/2025. Cannot be combined with other offers.</p>
+                            </div>
+                        </div>
+                        <!-- Coupon Card 2 -->
+                        <div class="bg-gradient-to-r from-purple-400 to-purple-600 text-white p-6 rounded-xl shadow-lg relative overflow-hidden">
+                            <div class="absolute top-0 left-0 bg-white bg-opacity-20 w-24 h-24 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+                            <div class="absolute bottom-0 right-0 bg-white bg-opacity-20 w-24 h-24 rounded-full translate-x-1/2 -translate-y-1/2"></div>
+                            <h4 class="text-3xl font-bold mb-2">Free Teeth Whitening Consultation</h4>
+                            <p class="text-lg mb-4">Discover your options for a brighter smile with a complimentary consultation.</p>
+                            <div class="border-t border-dashed border-white border-opacity-70 pt-4 mt-4">
+                                <p class="font-mono text-xl tracking-wider">CODE: BRIGHTSMILE</p>
+                                <p class="text-sm mt-1 opacity-80">Offer valid for a limited time. Consultation only.</p>
+                            </div>
+                        </div>
+                        <!-- Coupon Card 3 -->
+                        <div class="bg-gradient-to-r from-orange-400 to-orange-600 text-white p-6 rounded-xl shadow-lg relative overflow-hidden">
+                            <div class="absolute top-0 left-0 bg-white bg-opacity-20 w-24 h-24 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+                            <div class="absolute bottom-0 right-0 bg-white bg-opacity-20 w-24 h-24 rounded-full translate-x-1/2 translate-y-1/2"></div>
+                            <h4 class="text-3xl font-bold mb-2">$50 Off Any Orthodontic Treatment</h4>
+                            <p class="text-lg mb-4">Start your journey to a straighter smile and save on braces or clear aligners.</p>
+                            <div class="border-t border-dashed border-white border-opacity-70 pt-4 mt-4">
+                                <p class="font-mono text-xl tracking-wider">CODE: ORTHOSAVE50</p>
+                                <p class="text-sm mt-1 opacity-80">Minimum treatment cost may apply. See clinic for details.</p>
+                            </div>
+                        </div>
+                        <!-- Coupon Card 4 -->
+                        <div class="bg-gradient-to-r from-blue-400 to-blue-600 text-white p-6 rounded-xl shadow-lg relative overflow-hidden">
+                            <div class="absolute top-0 left-0 bg-white bg-opacity-20 w-24 h-24 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+                            <div class="absolute bottom-0 right-0 bg-white bg-opacity-20 w-24 h-24 rounded-full translate-x-1/2 translate-y-1/2"></div>
+                            <h4 class="text-3xl font-bold mb-2">Kids' First Exam & Cleaning for $49</h4>
+                            <p class="text-lg mb-4">A special offer for our youngest patients to ensure a healthy start.</p>
+                            <div class="border-t border-dashed border-white border-opacity-70 pt-4 mt-4">
+                                <p class="font-mono text-xl tracking-wider">CODE: KIDSSMILE</p>
+                                <p class="text-sm mt-1 opacity-80">For children under 12. New patients only.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 md:py-24 container mx-auto px-6 md:px-12">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-700">What Our Patients Say</h2>
+            <p class="text-gray-600 mt-4 text-lg">Hear from those who trust us with their smiles.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Testimonial Card 1 -->
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-blue-500">
+                <p class="text-gray-700 italic mb-4">"SmilesRUs Dentistry provided me with the best dental experience I've ever had. The staff is incredibly friendly, and Dr. Smith is truly amazing!"</p>
+                <div class="flex items-center">
+                    <img src="https://placehold.co/60x60/e0e7ff/4338ca?text=JD" alt="Patient Avatar" class="w-12 h-12 rounded-full mr-4 object-cover">
+                    <div>
+                        <p class="font-semibold text-gray-800">Jane Doe</p>
+                        <p class="text-gray-500 text-sm">Happy Patient</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonial Card 2 -->
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-teal-500">
+                <p class="text-gray-700 italic mb-4">"I used to dread dental visits, but SmilesRUs changed that. Their gentle approach and clear explanations made me feel completely at ease."</p>
+                <div class="flex items-center">
+                    <img src="https://placehold.co/60x60/ffe4e6/be185d?text=MS" alt="Patient Avatar" class="w-12 h-12 rounded-full mr-4 object-cover">
+                    <div>
+                        <p class="font-semibold text-gray-800">Mark S.</p>
+                        <p class="text-gray-500 text-sm">Long-term Client</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonial Card 3 -->
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-purple-500">
+                <p class="text-gray-700 italic mb-4">"The results of my cosmetic treatment are phenomenal! I can't stop smiling. Thank you, SmilesRUs, for giving me my confidence back."</p>
+                <div class="flex items-center">
+                    <img src="https://placehold.co/60x60/dbeafe/1e40af?text=AL" alt="Patient Avatar" class="w-12 h-12 rounded-full mr-4 object-cover">
+                    <div>
+                        <p class="font-semibold text-gray-800">Anna L.</p>
+                        <p class="text-gray-500 text-sm">New Smile</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-blue-600 text-white py-16 md:py-24 rounded-t-3xl">
+        <div class="container mx-auto px-6 md:px-12 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12">Get In Touch</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                <!-- Contact Info -->
+                <div class="text-left">
+                    <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+                    <p class="mb-4 flex items-center"><i class="fas fa-map-marker-alt mr-3 text-xl"></i> 123 Dental Street, Smile City, ST 12345</p>
+                    <p class="mb-4 flex items-center"><i class="fas fa-phone mr-3 text-xl"></i> (123) 456-7890</p>
+                    <p class="mb-4 flex items-center"><i class="fas fa-envelope mr-3 text-xl"></i> info@smilesrus.com</p>
+                    <p class="mb-6 flex items-center"><i class="fas fa-clock mr-3 text-xl"></i> Mon-Fri: 9:00 AM - 5:00 PM</p>
+
+                    <h3 class="text-2xl font-semibold mb-4">Find Us on the Map</h3>
+                    <!-- Placeholder for Map -->
+                    <div class="bg-gray-200 h-64 rounded-xl overflow-hidden shadow-lg">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.2500000000005!2d-122.08424999999999!3d37.421999999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb5e0f0a0a0a1%3A0x808fb5e0f0a0a0a1!2sGoogleplex!5e0!3m2!1sen!2sus!4v1678901234567!5m2!1sen!2sus"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                            title="SmilesRUs Dentistry Location"
+                        ></iframe>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl text-gray-800">
+                    <h3 class="text-2xl font-semibold mb-6 text-blue-700">Send Us a Message</h3>
+                    <form id="contact-form">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+                            <input type="text" id="name" name="name" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                            <input type="email" id="email" name="email" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="your@example.com" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your message..." required></textarea>
+                        </div>
+                        <button type="submit" class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-full focus:outline-none focus:shadow-outline transition duration-300 transform hover:scale-105 w-full">
+                            Send Message
+                        </button>
+                        <div id="form-message" class="mt-4 text-center text-sm font-medium hidden"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white py-8 px-6 md:px-12 rounded-t-xl">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <p class="mb-4 md:mb-0">&copy; 2025 SmilesRUs Dentistry. All rights reserved.</p>
+            <div class="flex space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-facebook-f text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-twitter text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-linkedin-in text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+
+        closeMobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+
+        // Tab functionality for "Services & Coupons" section
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and hide all content
+                tabButtons.forEach(btn => {
+                    btn.classList.remove('active-tab', 'border-blue-700', 'text-blue-700');
+                    btn.classList.add('border-transparent', 'text-gray-600');
+                });
+                tabContents.forEach(content => {
+                    content.classList.add('hidden');
+                });
+
+                // Add active class to clicked button and show corresponding content
+                button.classList.add('active-tab', 'border-blue-700', 'text-blue-700');
+                button.classList.remove('border-transparent', 'text-gray-600');
+                const targetTabId = button.dataset.tab;
+                document.getElementById(targetTabId).classList.remove('hidden');
+            });
+        });
+
+        // Set initial active tab
+        document.addEventListener('DOMContentLoaded', () => {
+            const initialTabButton = document.querySelector('.tab-button.active-tab');
+            if (initialTabButton) {
+                initialTabButton.click(); // Simulate a click to activate the first tab
+            }
+        });
+
+        // Simple form submission handler
+        const contactForm = document.getElementById('contact-form');
+        const formMessage = document.getElementById('form-message');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            formMessage.classList.remove('hidden', 'text-green-600', 'text-red-600');
+            formMessage.classList.add('text-blue-600');
+            formMessage.textContent = 'Sending your message...';
+
+            // Simulate form submission
+            setTimeout(() => {
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+
+                if (name && email && message) {
+                    formMessage.classList.remove('text-blue-600');
+                    formMessage.classList.add('text-green-600');
+                    formMessage.textContent = 'Thank you for your message! We will get back to you soon.';
+                    contactForm.reset(); // Clear the form
+                } else {
+                    formMessage.classList.remove('text-blue-600');
+                    formMessage.classList.add('text-red-600');
+                    formMessage.textContent = 'Please fill in all fields.';
+                }
+                formMessage.classList.remove('hidden');
+            }, 1500); // Simulate network delay
+        });
+    </script>
+</body>
+</html>
