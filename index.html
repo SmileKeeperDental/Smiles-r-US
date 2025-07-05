@@ -3,426 +3,2249 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmilesRUs Dentistry - Your Brightest Smile Starts Here</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts - Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8fafc; /* Light blue-gray background */
+    <title>Smiles R Us - Your Journey to a Confident Smile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <style>
+        /* --- NEW Color Palette & Typography (Crisp White & Modern Blue) --- */
+        :root {
+            --primary-white-bg: #FFFFFF; /* Crisp White Background */
+            --off-white-bg: #F8F8F8; /* Subtle off-white for sections */
+            --primary-blue-dark: #2A629A; /* Corporate Blue - Headings, main elements */
+            --accent-blue-light: #4A90E2; /* Vibrant Sky Blue - CTAs, highlights */
+            --secondary-accent-gray: #EFEFEF; /* Very light cool gray for subtle details */
+            --text-dark: #333333; /* Dark text for readability */
+            --text-light-on-dark: #f0f0f0; /* Light text for dark backgrounds */
+            --text-subtle-gray: #777777; /* For less prominent text */
+
+            --font-serif: 'Playfair Display', serif;
+            --font-sans-serif: 'Lato', sans-serif;
         }
-        /* Custom scroll-behavior for smooth scrolling */
-        html {
-            scroll-behavior: smooth;
+
+        /* --- Base & Reset --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans-serif);
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--primary-white-bg);
+            overflow-x: hidden; /* Prevent horizontal scroll from animations */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-serif);
+            color: var(--primary-blue-dark);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3.8em;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 2.8em;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 10px;
+            color: var(--primary-blue-dark); /* Default heading color */
+        }
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-blue-light); /* Underline in accent blue */
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+        /* H2 on dark backgrounds (e.g., Hero Overlay, Footer) */
+        section[style*="background-color: var(--primary-blue-dark)"] h2,
+        section[style*="background-color: var(--accent-blue-light)"] h2,
+        .main-footer h3 {
+            color: var(--primary-white-bg); /* White headings on dark sections */
+        }
+        section[style*="background-color: var(--primary-blue-dark)"] h2::after,
+        section[style*="background-color: var(--accent-blue-light)"] h2::after {
+            background-color: var(--accent-blue-light); /* Accent blue underline on dark sections */
+        }
+
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            color: var(--text-dark);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--accent-blue-light); /* Links in accent blue */
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--primary-blue-dark);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- Buttons --- */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-family: var(--font-sans-serif);
+            font-size: 1.05em;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-blue-light);
+            color: var(--primary-white-bg); /* White text on accent blue */
+            border: 2px solid var(--accent-blue-light);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-blue-dark);
+            border-color: var(--primary-blue-dark);
+            color: var(--primary-white-bg);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-blue-dark);
+            border: 2px solid var(--primary-blue-dark);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-blue-dark);
+            color: var(--primary-white-bg);
+        }
+
+        .btn-outline-blue { /* New outline button for this theme */
+            background-color: transparent;
+            color: var(--primary-blue-dark);
+            border: 2px solid var(--primary-blue-dark);
+        }
+
+        .btn-outline-blue:hover {
+            background-color: var(--primary-blue-dark);
+            color: var(--primary-white-bg);
+        }
+
+        .btn-cta {
+            background-color: var(--primary-blue-dark);
+            color: var(--primary-white-bg);
+            border: 2px solid var(--primary-blue-dark);
+            padding: 18px 40px;
+            font-size: 1.3em;
+            border-radius: 50px;
+        }
+
+        .btn-cta:hover {
+            background-color: var(--accent-blue-light);
+            border-color: var(--accent-blue-light);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            transform: translateY(-4px);
+        }
+
+
+        /* --- Header --- */
+        .main-header {
+            background-color: var(--primary-white-bg); /* White header */
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            /* No filter needed if logo is already dark/blue */
+        }
+
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+        }
+
+        .main-nav ul li {
+            position: relative;
+            margin: 0 18px;
+        }
+
+        .main-nav ul li a {
+            color: var(--primary-blue-dark); /* Dark blue text on white header */
+            font-weight: 500;
+            padding: 10px 0;
+            display: block;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .main-nav ul li a:hover {
+            color: var(--accent-blue-light); /* Accent blue on hover */
+        }
+        .main-nav ul li a.active {
+            color: var(--accent-blue-light); /* Accent blue for active */
+        }
+        .main-nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-blue-light); /* Accent blue underline */
+            transition: width 0.3s ease;
+        }
+        .main-nav ul li a:hover::after,
+        .main-nav ul li a.active::after {
+            width: 100%;
+        }
+
+
+        /* Dropdown Menus */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--primary-white-bg); /* White dropdown background */
+            min-width: 220px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-top: 3px solid var(--accent-blue-light); /* Accent blue border */
+            border-radius: 0 0 8px 8px;
+            padding: 10px 0;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            pointer-events: none;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: all;
+        }
+
+        .dropdown-content a {
+            color: var(--text-dark);
+            padding: 12px 18px;
+            display: block;
+            text-align: left;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: var(--secondary-accent-gray);
+            color: var(--primary-blue-dark);
+        }
+
+        /* Submenu */
+        .submenu-container {
+            position: relative;
+        }
+        .submenu-content {
+            display: none;
+            position: absolute;
+            left: 100%; /* Position to the right of parent menu item */
+            top: 0;
+            background-color: var(--primary-white-bg);
+            min-width: 220px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            border-top: 3px solid var(--accent-blue-light);
+            border-radius: 0 8px 8px 8px; /* Adjusted border radius */
+            padding: 10px 0;
+            opacity: 0;
+            transform: translateX(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            pointer-events: none;
+        }
+        .submenu-container:hover > .submenu-content {
+            display: block;
+            opacity: 1;
+            transform: translateX(0);
+            pointer-events: all;
+        }
+        .submenu-container > a i { /* Arrow for submenu parent */
+            margin-left: 10px;
+            font-size: 0.8em;
+            transition: transform 0.3s ease;
+        }
+        .submenu-container:hover > a i {
+            transform: rotate(90deg);
+        }
+
+
+        /* Mobile Navigation */
+        .hamburger-menu {
+            display: none;
+            font-size: 2em;
+            color: var(--primary-blue-dark); /* Dark blue hamburger */
+            cursor: pointer;
+        }
+
+        .mobile-nav-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary-blue-dark); /* Dark blue mobile menu */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1001;
+            transform: translateX(100%);
+            transition: transform 0.4s ease-in-out;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .mobile-nav-overlay.open {
+            transform: translateX(0);
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .mobile-nav-overlay .close-btn {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            font-size: 2.5em;
+            color: var(--primary-white-bg);
+            cursor: pointer;
+        }
+
+        .mobile-nav-overlay ul {
+            list-style: none;
+            text-align: center;
+            width: 80%;
+        }
+
+        .mobile-nav-overlay ul li {
+            margin: 20px 0; /* Reduced vertical margin */
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .mobile-nav-overlay.open ul li {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Staggered animation */
+        .mobile-nav-overlay.open ul li:nth-child(1) { transition-delay: 0.1s; }
+        .mobile-nav-overlay.open ul li:nth-child(2) { transition-delay: 0.15s; }
+        .mobile-nav-overlay.open ul li:nth-child(3) { transition-delay: 0.2s; }
+        .mobile-nav-overlay.open ul li:nth-child(4) { transition-delay: 0.25s; }
+        .mobile-nav-overlay.open ul li:nth-child(5) { transition-delay: 0.3s; }
+        .mobile-nav-overlay.open ul li:nth-child(6) { transition-delay: 0.35s; }
+        .mobile-nav-overlay.open ul li:nth-child(7) { transition-delay: 0.4s; }
+        .mobile-nav-overlay.open ul li:nth-child(8) { transition-delay: 0.45s; }
+        .mobile-nav-overlay.open ul li:nth-child(9) { transition-delay: 0.5s; }
+
+        .mobile-nav-overlay ul li a {
+            color: var(--primary-white-bg);
+            font-size: 1.6em; /* Slightly smaller font for mobile */
+            font-weight: 600;
+            display: block;
+            padding: 8px 0; /* Smaller padding */
+        }
+
+        .mobile-nav-overlay ul li a:hover {
+            color: var(--accent-blue-light);
+        }
+
+        .mobile-nav-overlay .mobile-dropdown-content {
+            background-color: rgba(0, 0, 0, 0.3);
+            margin-top: 10px; /* Reduced margin */
+            padding: 8px 0; /* Reduced padding */
+            border-radius: 8px;
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.5s ease-out;
+            opacity: 0;
+        }
+        .mobile-nav-overlay .mobile-dropdown-content.open {
+            max-height: 500px;
+            opacity: 1;
+        }
+        .mobile-nav-overlay .mobile-dropdown a {
+            font-size: 1.2em; /* Smaller font for mobile dropdowns */
+            padding: 6px 0;
+        }
+        .mobile-nav-overlay .mobile-dropdown .submenu-container > a i {
+            margin-left: 5px; /* Reduced margin */
+            font-size: 0.7em;
+        }
+        .mobile-nav-overlay .mobile-dropdown .submenu-content {
+            position: relative; /* Submenus stack vertically on mobile */
+            left: 0;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.2); /* Even darker background */
+            border-top: none; /* No top border for stacking */
+            border-radius: 0; /* No border radius */
+            padding: 5px 0;
+            margin-top: 5px;
+            box-shadow: none;
+        }
+        .mobile-nav-overlay .mobile-dropdown .submenu-content a {
+            padding: 5px 0; /* Smallest padding for sub-sub-items */
+            font-size: 1.1em;
+        }
+        .btn-primary-mobile, .btn-secondary-mobile {
+            width: 90%;
+            max-width: 350px;
+            margin: 15px auto;
+            padding: 18px;
+            font-size: 1.4em;
+            border-radius: 50px;
+        }
+        .btn-primary-mobile {
+            background-color: var(--accent-blue-light);
+            color: var(--primary-white-bg);
+            border: 2px solid var(--accent-blue-light);
+        }
+        .btn-secondary-mobile {
+            background-color: transparent;
+            color: var(--primary-white-bg);
+            border: 2px solid var(--primary-white-bg);
+        }
+
+
+        /* --- Hero Section --- */
+        .hero-section {
+            position: relative;
+            height: 85vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--primary-white-bg);
+            overflow: hidden;
+        }
+
+        /* Hero Video Background */
+        .hero-video-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -2;
+            transform: translate(-50%, -50%);
+            background-size: cover;
+        }
+        /* Fallback for browsers that don't support video or slow connections */
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://source.unsplash.com/random/1920x1080/?modern-dentistry,calming-blue') no-repeat center center/cover;
+            z-index: -3; /* Behind video */
+        }
+
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3); /* Lighter overlay for brighter theme */
+            z-index: -1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            padding: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 5em;
+            margin-bottom: 25px;
+            color: var(--primary-white-bg);
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+            letter-spacing: 1px;
+        }
+        .hero-content p {
+            font-size: 1.6em;
+            margin-bottom: 40px;
+            color: var(--text-light-on-dark);
+            font-weight: 300;
+            line-height: 1.4;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .hero-btn {
+            padding: 18px 40px;
+            font-size: 1.3em;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        /* Specific hero button styling */
+        .hero-btn.btn-primary {
+            background-color: var(--accent-blue-light);
+            color: var(--primary-white-bg);
+            border-color: var(--accent-blue-light);
+        }
+        .hero-btn.btn-primary:hover {
+            background-color: var(--primary-blue-dark);
+            border-color: var(--primary-blue-dark);
+            color: var(--primary-white-bg);
+        }
+        .hero-btn.btn-secondary {
+            background-color: transparent;
+            color: var(--primary-white-bg);
+            border-color: var(--primary-white-bg);
+        }
+        .hero-btn.btn-secondary:hover {
+            background-color: rgba(255,255,255,0.1);
+            color: var(--accent-blue-light);
+        }
+
+        .scroll-down-arrow {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2.5em;
+            color: var(--primary-white-bg);
+            animation: bounce 2s infinite;
+            z-index: 2;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+
+        /* --- Sections Styles --- */
+        section {
+            padding: 100px 0;
+            opacity: 0;
+            transform: translateY(70px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Welcome Section */
+        .welcome-section {
+            background-color: var(--primary-white-bg);
+            color: var(--text-dark);
+        }
+
+        .welcome-grid {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .welcome-image {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transform: translateX(-80px);
+            opacity: 0;
+            transition: transform 1s ease-out, opacity 1s ease-out;
+        }
+        .welcome-section.visible .welcome-image.reveal-left {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .welcome-content {
+            flex: 1;
+            transform: translateX(80px);
+            opacity: 0;
+            transition: transform 1s ease-out, opacity 1s ease-out;
+            transition-delay: 0.2s;
+        }
+        .welcome-section.visible .welcome-content.reveal-right {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .welcome-content h2 {
+            text-align: left;
+            margin-bottom: 25px;
+            font-size: 3em;
+            color: var(--primary-blue-dark);
+        }
+        .welcome-content h2::after {
+            margin-left: 0;
+            background-color: var(--accent-blue-light);
+        }
+
+        .accent-text {
+            color: var(--accent-blue-light);
+            font-weight: 700;
+        }
+
+        /* Locations Section */
+        .locations-section {
+            background-color: var(--off-white-bg); /* Off-white background */
+        }
+        .locations-section h2 {
+            color: var(--primary-blue-dark);
+        }
+
+        .location-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .location-card {
+            background-color: var(--primary-white-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            padding-bottom: 30px;
+            transform: translateY(70px);
+            opacity: 0;
+            transition: transform 1s ease-out, opacity 1s ease-out;
+        }
+        .locations-section.visible .location-card.reveal-up {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .locations-section.visible .location-card:nth-child(1) { transition-delay: 0.1s; }
+        .locations-section.visible .location-card:nth-child(2) { transition-delay: 0.2s; }
+        .locations-section.visible .location-card:nth-child(3) { transition-delay: 0.3s; }
+        .locations-section.visible .location-card:nth-child(4) { transition-delay: 0.4s; }
+        .locations-section.visible .location-card:nth-child(5) { transition-delay: 0.5s; }
+
+
+        .location-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+        }
+
+        .location-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--accent-blue-light); /* Accent blue border */
+        }
+
+        .location-card h3 {
+            font-size: 1.8em;
+            margin: 25px 0 15px;
+            color: var(--primary-blue-dark);
+        }
+
+        .location-card p {
+            font-size: 1.05em;
+            color: var(--text-subtle-gray);
+            padding: 0 25px;
+            margin-bottom: 25px;
+        }
+        .location-card .btn {
+            background-color: var(--primary-blue-dark);
+            color: var(--primary-white-bg);
+            border-color: var(--primary-blue-dark);
+            font-size: 0.95em;
+            padding: 10px 20px;
+        }
+        .location-card .btn:hover {
+            background-color: var(--accent-blue-light);
+            color: var(--primary-white-bg);
+            border-color: var(--accent-blue-light);
+        }
+
+
+        /* Services Section */
+        .services-section {
+            background-color: var(--primary-white-bg);
+        }
+        .services-section h2 {
+            color: var(--primary-blue-dark);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--off-white-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+            border: 2px solid transparent;
+            position: relative;
+            transform: translateY(70px);
+            opacity: 0;
+            transition: transform 1s ease-out, opacity 1s ease-out;
+            height: 350px;
+        }
+        .services-section.visible .service-card.reveal-up {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .services-section.visible .service-card:nth-child(1) { transition-delay: 0.1s; }
+        .services-section.visible .service-card:nth-child(2) { transition-delay: 0.2s; }
+        .services-section.visible .service-card:nth-child(3) { transition-delay: 0.3s; }
+        .services-section.visible .service-card:nth-child(4) { transition-delay: 0.4s; }
+        .services-section.visible .service-card:nth-child(5) { transition-delay: 0.5s; }
+        .services-section.visible .service-card:nth-child(6) { transition-delay: 0.6s; }
+
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            border-color: var(--accent-blue-light);
+        }
+
+        .service-image-container {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0; left: 0;
+        }
+        .service-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.8);
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+        .service-card:hover .service-image-container img {
+            transform: scale(1.05);
+            filter: brightness(1);
+        }
+
+        .service-content-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 25px;
+            background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0));
+            color: var(--primary-white-bg);
+        }
+
+        .service-icon-large {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            font-size: 3.5em;
+            color: var(--primary-blue-dark);
+            z-index: 1;
+            text-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        /* Specific icon adjustments for emergency */
+        .service-icon-large.emergency {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .service-icon-large.emergency .fa-tooth {
+            font-size: 0.8em;
+        }
+        .service-icon-large.emergency .fa-plus {
+            font-size: 0.6em;
+            color: #dc3545;
+        }
+
+
+        .service-card h3 {
+            font-size: 1.8em;
+            margin: 0;
+            color: var(--primary-white-bg);
+            text-align: left;
+            line-height: 1.2;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .service-card p {
+            font-size: 0.95em;
+            color: var(--text-light-on-dark);
+            margin-top: 5px;
+            margin-bottom: 0;
+            text-align: left;
+        }
+
+
+        /* Your Comfort, Our Priority Section */
+        .priority-section {
+            background-color: var(--off-white-bg);
+        }
+        .priority-section h2 {
+            color: var(--primary-blue-dark);
+        }
+
+        .priority-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .priority-card {
+            background-color: var(--primary-white-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+            border: 2px solid transparent;
+            position: relative;
+            transform: translateY(70px);
+            opacity: 0;
+            transition: transform 1s ease-out, opacity 1s ease-out;
+            height: 280px;
+        }
+        .priority-section.visible .priority-card.reveal-up {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .priority-section.visible .priority-card:nth-child(1) { transition-delay: 0.1s; }
+        .priority-section.visible .priority-card:nth-child(2) { transition-delay: 0.2s; }
+        .priority-section.visible .priority-card:nth-child(3) { transition-delay: 0.3s; }
+
+        .priority-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            border-color: var(--accent-blue-light);
+        }
+
+        .priority-card .image-overlay {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0; left: 0;
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.8);
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+        .priority-card:hover .image-overlay {
+            transform: scale(1.05);
+            filter: brightness(1);
+        }
+
+        .priority-card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 25px;
+            background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0));
+            color: var(--primary-white-bg);
+        }
+
+        .priority-card-content h3 {
+            font-size: 1.8em;
+            margin: 0;
+            color: var(--primary-white-bg);
+            text-align: left;
+            line-height: 1.2;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .priority-card-content p {
+            font-size: 0.95em;
+            color: var(--text-light-on-dark);
+            margin-top: 5px;
+            margin-bottom: 0;
+            text-align: left;
+        }
+
+
+        /* Why Choose Us Section */
+        .why-choose-us-section {
+            background-color: var(--primary-white-bg);
+            color: var(--text-dark);
+        }
+        .why-choose-us-section h2 {
+            color: var(--primary-blue-dark);
+        }
+        .why-choose-us-section h2::after {
+            background-color: var(--accent-blue-light);
+        }
+
+        .advantage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .advantage-item {
+            text-align: center;
+            padding: 40px 30px;
+            border-radius: 15px;
+            background-color: var(--off-white-bg);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            transform: translateY(70px);
+            opacity: 0;
+            transition: transform 1s ease-out, opacity 1s ease-out;
+        }
+        .why-choose-us-section.visible .advantage-item.reveal-up {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .why-choose-us-section.visible .advantage-item:nth-child(1) { transition-delay: 0.1s; }
+        .why-choose-us-section.visible .advantage-item:nth-child(2) { transition-delay: 0.2s; }
+        .why-choose-us-section.visible .advantage-item:nth-child(3) { transition-delay: 0.3s; }
+        .why-choose-us-section.visible .advantage-item:nth-child(4) { transition-delay: 0.4s; }
+
+
+        .advantage-item:hover {
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            transform: translateY(-8px);
+        }
+
+        .advantage-item .icon-large {
+            font-size: 4em;
+            color: var(--accent-blue-light);
+            margin-bottom: 25px;
+        }
+
+        .advantage-item h3 {
+            color: var(--primary-blue-dark);
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .advantage-item p {
+            color: var(--text-dark);
+            font-size: 1em;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            background-color: var(--off-white-bg);
+            position: relative;
+            overflow: hidden;
+        }
+        .testimonials-section h2 {
+            color: var(--primary-blue-dark);
+        }
+
+        .testimonial-carousel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 380px;
+        }
+
+        .testimonial-slide {
+            position: absolute;
+            width: 85%;
+            max-width: 800px;
+            background-color: var(--primary-white-bg);
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            opacity: 0;
+            transform: translateX(-100%);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: var(--text-dark);
+        }
+
+        .testimonial-slide.active {
+            opacity: 1;
+            transform: translateX(0%);
+        }
+
+        .patient-avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 25px;
+            border: 4px solid var(--accent-blue-light);
+            box-shadow: 0 0 0 8px rgba(74, 144, 226, 0.2);
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.4em;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .patient-name {
+            font-weight: 700;
+            color: var(--primary-blue-dark);
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+
+        .stars {
+            font-size: 1.4em;
+            color: var(--accent-blue-light);
+        }
+
+        .carousel-nav {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .dot {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            background-color: var(--secondary-accent-gray);
+            border-radius: 50%;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: var(--accent-blue-light);
+            transform: scale(1.3);
+        }
+
+
+        /* Secondary CTA Section */
+        .secondary-cta-section {
+            background-color: var(--primary-blue-dark);
+            text-align: center;
+            color: var(--primary-white-bg);
+            padding: 80px 20px;
+        }
+        .secondary-cta-section h2 {
+            color: var(--primary-white-bg);
+            font-size: 3.5em;
+        }
+        .secondary-cta-section h2::after {
+            background-color: var(--accent-blue-light);
+        }
+        .secondary-cta-section p {
+            font-size: 1.4em;
+            margin-bottom: 40px;
+            color: var(--text-light-on-dark);
+            font-weight: 500;
+        }
+        .secondary-cta-section .btn-cta {
+            background-color: var(--accent-blue-light);
+            border-color: var(--accent-blue-light);
+            color: var(--primary-white-bg);
+        }
+        .secondary-cta-section .btn-cta:hover {
+            background-color: var(--primary-white-bg);
+            border-color: var(--primary-white-bg);
+            color: var(--primary-blue-dark);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+
+        /* --- Footer --- */
+        .main-footer {
+            background-color: var(--primary-blue-dark);
+            color: var(--text-light-on-dark);
+            padding: 80px 0 30px;
+            font-size: 0.95em;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h3 {
+            color: var(--accent-blue-light);
+            font-size: 1.6em;
+            margin-bottom: 25px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-light-on-dark);
+            transition: color 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-blue-light);
+        }
+
+        .footer-col p {
+            margin-bottom: 12px;
+            color: var(--text-light-on-dark);
+        }
+
+        .footer-col p i {
+            margin-right: 12px;
+            color: var(--accent-blue-light);
+        }
+        .footer-col .hours {
+            font-weight: 700;
+            color: var(--accent-blue-light);
+        }
+
+        .footer-logo {
+            margin-bottom: 25px;
+            filter: brightness(0) invert(1);
+        }
+
+        .social-icons {
+            margin-top: 25px;
+        }
+
+        .social-icons a {
+            color: var(--text-light-on-dark);
+            font-size: 1.8em;
+            margin-right: 20px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--accent-blue-light);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-light-on-dark);
+        }
+        .footer-bottom a {
+            color: var(--text-light-on-dark);
+        }
+        .footer-bottom a:hover {
+            color: var(--accent-blue-light);
+        }
+
+        /* --- Global Easy Access Floating Button (FAB) --- */
+        .fab-container {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 10000;
+        }
+
+        .fab-main {
+            background-color: var(--accent-blue-light);
+            color: var(--primary-white-bg);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.2em;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        .fab-main:hover {
+            background-color: var(--primary-blue-dark);
+            transform: scale(1.08);
+        }
+        .fab-main.active {
+            transform: rotate(45deg);
+            animation: none;
+        }
+
+        .fab-options {
+            position: absolute;
+            bottom: 90px;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(30px);
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+        }
+        .fab-options.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .fab-option {
+            background-color: var(--primary-blue-dark);
+            color: var(--primary-white-bg);
+            padding: 12px 18px;
+            border-radius: 8px;
+            text-align: right;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            white-space: nowrap;
+            font-size: 1em;
+            font-weight: 500;
+        }
+        .fab-option i {
+            font-size: 1.3em;
+            margin-right: auto;
+        }
+
+        .fab-option:hover {
+            background-color: var(--accent-blue-light);
+            color: var(--primary-white-bg);
+            transform: translateX(-8px);
+        }
+
+        /* Specific FAB option colors - adjusted for new palette */
+        .fab-option.book-now { background-color: var(--accent-blue-light); color: var(--primary-white-bg); }
+        .fab-option.book-now:hover { background-color: var(--primary-blue-dark); }
+        .fab-option.call-us { background-color: var(--primary-blue-dark); }
+        .fab-option.call-us:hover { background-color: var(--accent-blue-light); color: var(--primary-white-bg); }
+        .fab-option.text-us { background-color: #5cb85c; } /* Keeping green for common association */
+        .fab-option.text-us:hover { background-color: #4CAF50; }
+        .fab-option.chat-now { background-color: #ffc107; color: var(--text-dark); } /* Keeping yellow for common association */
+        .fab-option.chat-now:hover { background-color: #e0a800; }
+
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(74, 144, 226, 0.4); } /* Accent blue pulse */
+            70% { box-shadow: 0 0 0 25px rgba(74, 144, 226, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(74, 144, 226, 0); }
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 1024px) {
+            .main-header .main-nav {
+                display: none;
+            }
+            .main-header .hamburger-menu {
+                display: block;
+            }
+            .main-header .header-content {
+                justify-content: space-between;
+            }
+            .logo img {
+                height: 45px;
+            }
+
+            .hero-content h1 {
+                font-size: 3.5em;
+            }
+            .hero-content p {
+                font-size: 1.3em;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                gap: 18px;
+            }
+            .hero-btn {
+                width: 90%;
+                max-width: 350px;
+                margin: 0 auto;
+            }
+
+            .welcome-grid {
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+            }
+            .welcome-image, .welcome-content {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            .welcome-section.visible .welcome-image,
+            .welcome-section.visible .welcome-content {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            .welcome-content h2 {
+                text-align: center;
+            }
+            .welcome-content h2::after {
+                margin: 10px auto 0;
+            }
+
+            section {
+                padding: 70px 0;
+            }
+            h2 {
+                font-size: 2.2em;
+                margin-bottom: 30px;
+            }
+
+            .testimonial-slide {
+                width: 95%;
+                padding: 30px;
+                height: 320px;
+            }
+            .patient-avatar {
+                width: 90px;
+                height: 90px;
+            }
+            .quote {
+                font-size: 1.1em;
+            }
+
+            .secondary-cta-section h2 {
+                font-size: 2.5em;
+            }
+            .secondary-cta-section p {
+                font-size: 1.2em;
+            }
+            .btn-cta {
+                padding: 15px 30px;
+                font-size: 1.1em;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 30px;
+            }
+            .footer-col ul {
+                padding-left: 0;
+            }
+            .footer-col p i {
+                margin-right: 8px;
+            }
+            .footer-col.logo-col img {
+                margin: 0 auto 20px;
+            }
+            .social-icons {
+                justify-content: center;
+                display: flex;
+            }
+            .footer-col h3 {
+                margin-top: 25px;
+                margin-bottom: 15px;
+            }
+
+            .fab-container {
+                bottom: 25px;
+                right: 25px;
+            }
+            .fab-main {
+                width: 60px;
+                height: 60px;
+                font-size: 1.8em;
+            }
+            .fab-options {
+                gap: 12px;
+                bottom: 80px;
+            }
+            .fab-option {
+                padding: 10px 15px;
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 3em;
+            }
+            .hero-content p {
+                font-size: 1.1em;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            h1 {
+                font-size: 2.5em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            p {
+                font-size: 1em;
+            }
+
+            .hero-section {
+                height: 75vh;
+            }
+            .hero-content h1 {
+                font-size: 2.8em;
+            }
+            .hero-content p {
+                font-size: 1em;
+            }
+            .hero-buttons {
+                gap: 15px;
+            }
+            .hero-btn {
+                padding: 12px 25px;
+                font-size: 1.1em;
+            }
+
+            section {
+                padding: 50px 0;
+            }
+            .welcome-grid {
+                gap: 30px;
+            }
+            .welcome-image, .welcome-content {
+                transform: translateY(30px);
+            }
+
+            .service-card, .location-card, .priority-card, .advantage-item {
+                height: auto;
+                min-height: 250px;
+                transform: translateY(30px);
+            }
+            .service-card h3, .priority-card-content h3, .location-card h3 {
+                font-size: 1.6em;
+            }
+            .service-card p, .priority-card-content p, .location-card p {
+                font-size: 0.9em;
+            }
+
+            .patient-avatar {
+                width: 80px;
+                height: 80px;
+            }
+            .quote {
+                font-size: 1em;
+            }
+            .testimonial-slide {
+                padding: 25px;
+                height: 300px;
+            }
+
+            .secondary-cta-section h2 {
+                font-size: 2em;
+            }
+            .secondary-cta-section p {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
-<body class="text-gray-800">
+<body>
 
-    <!-- Header Section -->
-    <header class="bg-white shadow-lg py-4 px-6 md:px-12 sticky top-0 z-50 rounded-b-xl">
-        <nav class="container mx-auto flex justify-between items-center">
-            <a href="#" class="flex items-center space-x-2">
-                <i class="fas fa-tooth text-blue-500 text-3xl"></i>
-                <span class="text-2xl font-bold text-blue-700">SmilesRUs Dentistry</span>
-            </a>
-            <div class="hidden md:flex space-x-8">
-                <a href="#home" class="text-gray-600 hover:text-blue-500 font-medium transition duration-300">Home</a>
-                <a href="#why-choose-us" class="text-gray-600 hover:text-blue-500 font-medium transition duration-300">Why Choose Us</a>
-                <a href="#additional-pages" class="text-gray-600 hover:text-blue-500 font-medium transition duration-300">Services & Coupons</a>
-                <a href="#about" class="text-gray-600 hover:text-blue-500 font-medium transition duration-300">About Us</a>
-                <a href="#contact" class="text-gray-600 hover:text-blue-500 font-medium transition duration-300">Contact</a>
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="/"><img src="https://source.unsplash.com/180x50/?dental-logo,blue" alt="Smiles R Us Logo"></a>
             </div>
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
-        </nav>
-        <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-white bg-opacity-95 z-40 flex flex-col items-center justify-center space-y-6">
-            <button id="close-mobile-menu" class="absolute top-6 right-6 text-gray-600 focus:outline-none">
-                <i class="fas fa-times text-3xl"></i>
-            </button>
-            <a href="#home" class="text-gray-800 text-2xl font-semibold hover:text-blue-500 transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Home</a>
-            <a href="#why-choose-us" class="text-gray-800 text-2xl font-semibold hover:text-blue-500 transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Why Choose Us</a>
-            <a href="#additional-pages" class="text-gray-800 text-2xl font-semibold hover:text-blue-500 transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Services & Coupons</a>
-            <a href="#about" class="text-gray-800 text-2xl font-semibold hover:text-blue-500 transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">About Us</a>
-            <a href="#contact" class="text-gray-800 text-2xl font-semibold hover:text-blue-500 transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Contact</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/" class="active">Home</a></li>
+                    <li><a href="why-choose-us">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="#">Our Services <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <div class="submenu-container">
+                                <a href="preventative-care">Preventative Care <i class="fas fa-chevron-right"></i></a>
+                                <div class="submenu-content">
+                                    <a href="teeth-cleaning-and-dental-checkups">Teeth Cleaning & Dental Checkups</a>
+                                    <a href="pregnancy-dental-care">Pregnancy Dental Care</a>
+                                    <a href="oral-hygiene">Oral Hygiene</a>
+                                    <a href="child-dentistry">Child Dentistry</a>
+                                    <a href="dental-sealants">Dental Sealants</a>
+                                    <a href="tooth-extractions">Tooth Extractions</a>
+                                    <a href="arestin">Arestin</a>
+                                    <div class="submenu-container">
+                                        <a href="gum-disease-treatment">Gum Disease Treatment <i class="fas fa-chevron-right"></i></a>
+                                        <div class="submenu-content">
+                                            <a href="periodontal-maintenance">Periodontal Maintenance</a>
+                                            <a href="gum-disease-laser-therapy">Gum Disease Laser Therapy</a>
+                                            <a href="deep-teeth-cleaning">Deep Teeth Cleaning</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="submenu-container">
+                                <a href="restorative-dentistry">Restorative Dentistry <i class="fas fa-chevron-right"></i></a>
+                                <div class="submenu-content">
+                                    <a href="dental-fillings">Dental Fillings</a>
+                                    <a href="dental-implants">Dental Implants</a>
+                                    <a href="dental-bridges">Dental Bridges</a>
+                                    <a href="dental-crowns">Dental Crowns</a>
+                                    <a href="non-surgical-root-canal">Non-Surgical Root Canal</a>
+                                    <div class="submenu-container">
+                                        <a href="dentures">Dentures <i class="fas fa-chevron-right"></i></a>
+                                        <div class="submenu-content">
+                                            <a href="immediate-dentures">Immediate Dentures</a>
+                                            <a href="implant-retained-dentures">Implant Retained Dentures</a>
+                                            <a href="partial-dentures">Partial Dentures</a>
+                                            <a href="denture-care">Denture Care</a>
+                                            <a href="exams-and-maintenance">Exams & Maintenance</a>
+                                            <a href="denture-relines">Denture Relines</a>
+                                            <a href="rebase-and-repairs">Rebase & Repairs</a>
+                                            <a href="soft-liners">Soft Liners</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="submenu-container">
+                                <a href="cosmetic-dentistry">Cosmetic Dentistry <i class="fas fa-chevron-right"></i></a>
+                                <div class="submenu-content">
+                                    <a href="dental-bonding">Dental Bonding</a>
+                                    <a href="porcelain-veneers">Porcelain Veneers</a>
+                                    <a href="inlays-and-onlays">Inlays & Onlays</a>
+                                    <div class="submenu-container">
+                                        <a href="teeth-whitening">Teeth Whitening <i class="fas fa-chevron-right"></i></a>
+                                        <div class="submenu-content">
+                                            <a href="zoom-whitening">Zoom Whitening</a>
+                                            <a href="lasersmile">LaserSmile</a>
+                                        </div>
+                                    </div>
+                                    <div class="submenu-container">
+                                        <a href="cerec">CEREC <i class="fas fa-chevron-right"></i></a>
+                                        <div class="submenu-content">
+                                            <a href="uses-of-cerec">Uses of CEREC</a>
+                                            <a href="cerec-benefits">CEREC Benefits</a>
+                                        </div>
+                                    </div>
+                                    <a href="e4d-dentist">E4D Dentist®</a>
+                                    <a href="invisalign-information">Invisalign Information</a>
+                                    <a href="snap-on-smile">Snap-On Smile</a>
+                                </div>
+                            </div>
+                            <a href="emergency-care">Emergency Care</a> </div>
+                    </li>
+                    <li class="dropdown location-dropdown-desktop"> <a href="locations">Locations <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="dundalk">Dundalk</a>
+                            <a href="ellicott-city">Ellicott City</a>
+                            <a href="woodlawn">Woodlawn</a>
+                            <a href="baltimore-reisterstown">Baltimore-Reisterstown</a>
+                            <a href="baltimore-garrison">Baltimore-Garrison</a>
+                        </div>
+                    </li>
+                    <li><a href="contact">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="header-ctas">
+                </div>
+            <div class="hamburger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+        <div class="mobile-nav-overlay">
+            <i class="fas fa-times close-btn"></i>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="why-choose-us">About Us</a></li>
+                <li class="mobile-dropdown">
+                    <a href="#">Our Services <i class="fas fa-chevron-down"></i></a>
+                    <div class="mobile-dropdown-content">
+                        <div class="submenu-container">
+                            <a href="preventative-care">Preventative Care <i class="fas fa-chevron-right"></i></a>
+                            <div class="submenu-content">
+                                <a href="teeth-cleaning-and-dental-checkups">Teeth Cleaning & Dental Checkups</a>
+                                <a href="pregnancy-dental-care">Pregnancy Dental Care</a>
+                                <a href="oral-hygiene">Oral Hygiene</a>
+                                <a href="child-dentistry">Child Dentistry</a>
+                                <a href="dental-sealants">Dental Sealants</a>
+                                <a href="tooth-extractions">Tooth Extractions</a>
+                                <a href="arestin">Arestin</a>
+                                <div class="submenu-container">
+                                    <a href="gum-disease-treatment">Gum Disease Treatment <i class="fas fa-chevron-right"></i></a>
+                                    <div class="submenu-content">
+                                        <a href="periodontal-maintenance">Periodontal Maintenance</a>
+                                        <a href="gum-disease-laser-therapy">Gum Disease Laser Therapy</a>
+                                        <a href="deep-teeth-cleaning">Deep Teeth Cleaning</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="submenu-container">
+                            <a href="restorative-dentistry">Restorative Dentistry <i class="fas fa-chevron-right"></i></a>
+                            <div class="submenu-content">
+                                <a href="dental-fillings">Dental Fillings</a>
+                                <a href="dental-implants">Dental Implants</a>
+                                <a href="dental-bridges">Dental Bridges</a>
+                                <a href="dental-crowns">Dental Crowns</a>
+                                <a href="non-surgical-root-canal">Non-Surgical Root Canal</a>
+                                <div class="submenu-container">
+                                    <a href="dentures">Dentures <i class="fas fa-chevron-right"></i></a>
+                                    <div class="submenu-content">
+                                        <a href="immediate-dentures">Immediate Dentures</a>
+                                        <a href="implant-retained-dentures">Implant Retained Dentures</a>
+                                        <a href="partial-dentures">Partial Dentures</a>
+                                        <a href="denture-care">Denture Care</a>
+                                        <a href="exams-and-maintenance">Exams & Maintenance</a>
+                                        <a href="denture-relines">Denture Relines</a>
+                                        <a href="rebase-and-repairs">Rebase & Repairs</a>
+                                        <a href="soft-liners">Soft Liners</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="submenu-container">
+                            <a href="cosmetic-dentistry">Cosmetic Dentistry <i class="fas fa-chevron-right"></i></a>
+                            <div class="submenu-content">
+                                <a href="dental-bonding">Dental Bonding</a>
+                                <a href="porcelain-veneers">Porcelain Veneers</a>
+                                <a href="inlays-and-onlays">Inlays & Onlays</a>
+                                <div class="submenu-container">
+                                    <a href="teeth-whitening">Teeth Whitening <i class="fas fa-chevron-right"></i></a>
+                                    <div class="submenu-content">
+                                        <a href="zoom-whitening">Zoom Whitening</a>
+                                        <a href="lasersmile">LaserSmile</a>
+                                    </div>
+                                </div>
+                                <div class="submenu-container">
+                                    <a href="cerec">CEREC <i class="fas fa-chevron-right"></i></a>
+                                    <div class="submenu-content">
+                                        <a href="uses-of-cerec">Uses of CEREC</a>
+                                        <a href="cerec-benefits">CEREC Benefits</a>
+                                    </div>
+                                </div>
+                                <a href="e4d-dentist">E4D Dentist®</a>
+                                <a href="invisalign-information">Invisalign Information</a>
+                                <a href="snap-on-smile">Snap-On Smile</a>
+                            </div>
+                        </div>
+                        <a href="emergency-care">Emergency Care</a> </div>
+                </li>
+                <li class="mobile-dropdown"> <a href="locations">Locations <i class="fas fa-chevron-down"></i></a>
+                    <div class="mobile-dropdown-content">
+                        <a href="dundalk">Dundalk</a>
+                        <a href="ellicott-city">Ellicott City</a>
+                        <a href="woodlawn">Woodlawn</a>
+                        <a href="baltimore-reisterstown">Baltimore-Reisterstown</a>
+                        <a href="baltimore-garrison">Baltimore-Garrison</a>
+                    </div>
+                </li>
+                <li><a href="contact">Contact Us</a></li>
+                <li><a href="contact" class="btn btn-primary-mobile">Book Your Free Consultation</a></li>
+                <li><a href="sms:410-947-0606" class="btn btn-secondary-mobile"><i class="fas fa-comment-dots"></i> Text Us</a></li>
+                <li><a href="tel:410-947-0606" class="btn btn-secondary-mobile"><i class="fas fa-phone-alt"></i> Call Us</a></li>
+            </ul>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="relative bg-gradient-to-r from-blue-500 to-teal-400 text-white py-20 md:py-32 overflow-hidden rounded-b-3xl">
-        <div class="absolute inset-0 opacity-20" style="background-image: url('https://placehold.co/1920x1080/ffffff/000000?text=Dental+Background'); background-size: cover; background-position: center;"></div>
-        <div class="container mx-auto px-6 md:px-12 relative z-10 text-center">
-            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 drop-shadow-lg">
-                Your Brightest Smile Starts Here
-            </h1>
-            <p class="text-lg md:text-xl mb-10 max-w-2xl mx-auto opacity-90">
-                Experience compassionate care and advanced dental solutions for a healthier, happier you.
-            </p>
-            <a href="#contact" class="bg-white text-blue-600 hover:bg-blue-100 px-8 py-4 rounded-full text-lg font-semibold shadow-xl transition duration-300 transform hover:scale-105">
-                Book An Appointment
-            </a>
-        </div>
-    </section>
-
-    <!-- Why Choose Us Section -->
-    <section id="why-choose-us" class="py-16 md:py-24 bg-gray-100 rounded-t-3xl">
-        <div class="container mx-auto px-6 md:px-12 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-12">Why Choose SmilesRUs Dentistry?</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Feature Card 1 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
-                    <i class="fas fa-hand-holding-heart text-blue-500 text-5xl mb-6"></i>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Compassionate Care</h3>
-                    <p class="text-gray-600">Our team is dedicated to providing gentle, empathetic care, ensuring your comfort at every visit.</p>
-                </div>
-                <!-- Feature Card 2 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
-                    <i class="fas fa-microscope text-teal-500 text-5xl mb-6"></i>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Advanced Technology</h3>
-                    <p class="text-gray-600">We utilize state-of-the-art equipment and techniques for precise diagnoses and effective treatments.</p>
-                </div>
-                <!-- Feature Card 3 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
-                    <i class="fas fa-users text-purple-500 text-5xl mb-6"></i>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Experienced Professionals</h3>
-                    <p class="text-gray-600">Our highly skilled dentists and staff are committed to ongoing education and excellence.</p>
+    <main>
+        <section class="hero-section" id="hero">
+            <video autoplay muted loop class="hero-video-bg" playsinline>
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-water-flowing-through-light-64-large.mp4" type="video/mp4">
+                </video>
+            <div class="hero-overlay"></div>
+            <div class="hero-content fade-in-up">
+                <h1>Make Your Smile Shine.<br>Creating Beautiful Smiles Everyday</h1>
+                <p>Experience compassionate, advanced dental care across our 5 convenient Maryland locations.</p>
+                <div class="hero-buttons">
+                    <a href="contact" class="btn btn-primary hero-btn">Book Your Free Consultation</a>
+                    <a href="sms:410-947-0606" class="btn btn-secondary hero-btn"><i class="fas fa-comment-dots"></i> Text Us</a>
                 </div>
             </div>
-            <div class="mt-12">
-                <a href="#about" class="bg-blue-700 text-white hover:bg-blue-800 px-8 py-4 rounded-full text-lg font-semibold shadow-xl transition duration-300 transform hover:scale-105">
-                    Learn More About Us
-                </a>
-            </div>
-        </div>
-    </section>
+            <a href="#about" class="scroll-down-arrow"><i class="fas fa-chevron-down"></i></a>
+        </section>
 
-    <!-- About Us Section -->
-    <section id="about" class="py-16 md:py-24 container mx-auto px-6 md:px-12">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div class="order-2 md:order-1">
-                <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-6">About SmilesRUs Dentistry</h2>
-                <p class="text-gray-700 leading-relaxed mb-4">
-                    At SmilesRUs Dentistry, we are dedicated to providing exceptional dental care in a comfortable and friendly environment. Our team of experienced professionals uses the latest technology and techniques to ensure your oral health is in the best hands.
+
+
+
+        <section class="welcome-section reveal-on-scroll" id="about">
+            <div class="container">
+                <div class="welcome-grid">
+                    <div class="welcome-image reveal-left">
+                        <img src="https://i.ibb.co/G4ZKMcwq/Chat-GPT-Image-Jun-20-2025-11-33-43-PM.png" alt="Dentist Consulting Patient">
+                    </div>
+                    <div class="welcome-content reveal-right">
+                        <h2>WELCOME TO SMILES R US DENTISTRY!</h2>
+                        <p style="color: var(--text-dark);">
+                            You can now directly call and text the phone number of each office by selecting your preferred location or texting our main number below! We combine <strong style="color: var(--accent-blue-light);">compassionate care</strong> with <strong style="color: var(--accent-blue-light);">advanced technology</strong> to ensure every visit is comfortable and effective. Our <strong style="color: var(--accent-blue-light);">patient-centric approach</strong> means your unique needs are always our priority.
+                        </p>
+                        <a href="why-choose-us" class="btn btn-outline-blue">Why Choose Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services-section reveal-on-scroll" id="services">
+            <div class="container">
+                <h2>Our Services</h2>
+		
+				
+                <div class="services-grid">
+                    <div class="service-card reveal-up">
+                        <div class="service-image-container">
+                            <img src="https://i.ibb.co/LXg3Js2Q/Gemini-Generated-Image-111cqz111cqz111c.png" alt="Emergency Dental">
+                        </div>
+                        <div class="service-icon-large emergency">
+                            <i class="fas fa-tooth"></i><i class="fas fa-plus"></i>
+                        </div>
+                        <div class="service-content-overlay">
+                            <h3>Emergency Dental</h3>
+                            <p>For urgent dental needs.</p>
+                            <a href="emergency-care" class="overlay-link"></a>
+                        </div>
+                    </div>
+					
+				
+					
+                    <div class="service-card reveal-up">
+                        <div class="service-image-container">
+                            <img src="https://i.ibb.co/20m6pZQv/Chat-GPT-Image-Jun-22-2025-10-33-32-PM.png" alt="Dental Implants">
+                        </div>
+                        <div class="service-icon-large"><i class="fas fa-plus-square"></i></div>
+                        <div class="service-content-overlay">
+                            <h3>Dental Implants</h3>
+                            <p>Durable solutions for missing teeth.</p>
+                            <a href="dental-implants" class="overlay-link"></a>
+                        </div>
+                    </div>
+					
+	
+                    <div class="service-card reveal-up">
+                        <div class="service-image-container">
+                            <img src="https://i.ibb.co/pjQmxP76/Gemini-Generated-Image-r59bghr59bghr59b.png" alt="Snap On Smile">
+                        </div>
+                        <div class="service-icon-large"><i class="fas fa-smile"></i></div>
+                        <div class="service-content-overlay">
+                            <h3>Snap On Smile</h3>
+                            <p>Put On a Smile in an Instant.</p>
+                            <a href="snap-on-smile" class="overlay-link"></a>
+                        </div>
+                    </div>
+					
+			  <div class="service-card reveal-up">
+                        <div class="service-image-container">
+						
+                            <img src="https://i.ibb.co/n8f8TfpG/image.png" alt="All on 4">
+                        </div>
+                        <div class="service-icon-large"><i class="fas fa-teeth"></i></div>
+                        <div class="service-content-overlay">
+                            <h3>All on 4</h3>
+                            <p>Put on Your Perfect Smile in an Instant.</p>
+                            <a href="all-on-4" class="overlay-link"></a> </div>
+                    </div>
+					
+					<div class="service-card reveal-up">
+                        <div class="service-image-container">
+                            <img src="https://i.ibb.co/mV59N1jW/Gemini-Generated-Image-ajyf0wajyf0wajyf.png" alt="General Dentistry">
+                        </div>
+                        <div class="service-icon-large"><i class="fas fa-tooth"></i></div>
+                        <div class="service-content-overlay">
+                            <h3>General Dentistry</h3>
+                            <p>Routine check-ups and cleanings.</p>
+                            <a href="teeth-cleaning-and-dental-checkups" class="overlay-link"></a> </div>
+                    </div>
+                    <div class="service-card reveal-up">
+                        <div class="service-image-container">
+						
+						  <img src="https://i.ibb.co/Qv19s9YG/Chat-GPT-Image-Jun-28-2025-07-45-40-PM.png" alt="Cosmetic Dentistry">
+                        </div>
+                        <div class="service-icon-large"><i class="fas fa-star"></i></div>
+                        <div class="service-content-overlay">
+                            <h3>Cosmetic Dentistry</h3>
+                            <p>Whitening, veneers, and aesthetic enhancements.</p>
+                            <a href="cosmetic-dentistry" class="overlay-link"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="priority-section reveal-on-scroll">
+            <div class="container">
+                <h2>Your Comfort, Our Priority</h2>
+                <div class="priority-grid">
+                    <div class="priority-card reveal-up">
+					
+		
+                        <div class="image-overlay" style="background-image: url('https://ibb.co/vCp6YPwD"><img src="https://i.ibb.co/xKWtHjC3/Blue-Pink-Tooth-Ache-Clean-Informative-Health-Hygiene-Dentist-Instagram-Post-1.png');"></div>
+                        <div class="priority-card-content">
+                            <h3>Same Day Emergency</h3>
+                            <p>Urgent dental care when you need it most.</p>
+                        </div>
+                    </div>
+                    <div class="priority-card reveal-up">
+                        <div class="image-overlay" style="background-image: url('https://i.ibb.co/5WKxXxr1/Gemini-Generated-Image-bal9xsbal9xsbal9.png');"></div>
+                        <div class="priority-card-content">
+                            <h3>List of Insurance Accepted</h3>
+                            <p>Financing options available.</p>
+                        </div>
+                    </div>
+					
+ <div class="priority-card reveal-up">
+                        <div class="image-overlay" style="background-image: url('https://i.ibb.co/MyF7Fx0y/Blue-Pink-Tooth-Ache-Clean-Informative-Health-Hygiene-Dentist-Instagram-Post-2.png');"></div>
+                        <div class="priority-card-content">
+                            <h3>Discount Coupons</h3>
+                            <p>Explore our special offers and savings.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="locations-section reveal-on-scroll" id="locations">
+            <div class="container">
+                <h2>Find Your Nearest Smiles R Us Location</h2>
+                <p class="intro-panel-text" style="color: var(--text-dark); text-align: center; margin-bottom: 40px;">
+                    You can now directly call and text the phone number of each office by selecting your preferred location or texting our main number below!
                 </p>
-                <p class="text-gray-700 leading-relaxed">
-                    We believe in personalized care, taking the time to understand your needs and create a treatment plan that's right for you. From routine check-ups to cosmetic enhancements, we're here to help you achieve and maintain a beautiful, healthy smile for life.
-                </p>
+                <div class="location-grid">
+                    <div class="location-card reveal-up" id="location-baltimore-garrison">
+                        <img src="https://source.unsplash.com/400x250/?dental-clinic-exterior,baltimore,garrison" alt="Baltimore-Garrison Clinic">
+                        <h3>Baltimore-Garrison</h3>
+                        <p>2300 Garrison Blvd, Ste 209<br>Baltimore, MD 21216</p>
+                        <p style="font-weight: bold; color: var(--primary-blue-dark);">410-947-0606</p>
+                        <div class="branch-actions">
+                            <a href="tel:4109470606" class="btn btn-outline-blue btn-small">Call Now</a>
+                            <a href="sms:4109470606" class="btn btn-primary btn-small">Text Now</a>
+                        </div>
+                    </div>
+                    <div class="location-card reveal-up" id="location-baltimore-reisterstown">
+                        <img src="https://source.unsplash.com/400x250/?dental-clinic-interior,timonium,reisterstown" alt="Baltimore-Reisterstown Clinic">
+                        <h3>Baltimore-Reisterstown</h3>
+                        <p>2080 York Road, Suite 255<br>Timonium, MD 21093</p>
+                        <p style="font-weight: bold; color: var(--primary-blue-dark);">410-94-SMILE</p>
+                        <div class="branch-actions">
+                            <a href="tel:4109476453" class="btn btn-outline-blue btn-small">Call Now</a>
+                            <a href="sms:4109476453" class="btn btn-primary btn-small">Text Now</a>
+                        </div>
+                    </div>
+                    <div class="location-card reveal-up" id="location-ellicott-city">
+                        <img src="https://source.unsplash.com/400x250/?dental-office,ellicott-city,reception" alt="Ellicott City Clinic">
+                        <h3>Ellicott City</h3>
+                        <p>9200 Baltimore National Pike, Ste E<br>Ellicott City, MD 21042</p>
+                        <p style="font-weight: bold; color: var(--primary-blue-dark);">410-480-9800</p>
+                        <div class="branch-actions">
+                            <a href="tel:4104809800" class="btn btn-outline-blue btn-small">Call Now</a>
+                            <a href="sms:4104809800" class="btn btn-primary btn-small">Text Now</a>
+                        </div>
+                    </div>
+                    <div class="location-card reveal-up" id="location-dundalk">
+                        <img src="https://source.unsplash.com/400x250/?dental,dundalk,clinic" alt="Dundalk Clinic">
+                        <h3>Dundalk</h3>
+                        <p>1794 Merritt Blvd, Ste A<br>Dundalk, MD 21222</p>
+                        <p style="font-weight: bold; color: var(--primary-blue-dark);">410-282-9000</p>
+                        <div class="branch-actions">
+                            <a href="tel:4102829000" class="btn btn-outline-blue btn-small">Call Now</a>
+                            <a href="sms:4102829000" class="btn btn-primary btn-small">Text Now</a>
+                        </div>
+                    </div>
+                    <div class="location-card reveal-up" id="location-woodlawn">
+                        <img src="https://source.unsplash.com/400x250/?dental-office,woodlawn,exterior" alt="Woodlawn Clinic">
+                        <h3>Woodlawn</h3>
+                        <p>6666 Security Boulevard, Ste 11<br>Woodlawn, MD 21207</p>
+                        <p style="font-weight: bold; color: var(--primary-blue-dark);">410-944-6666</p>
+                        <div class="branch-actions">
+                            <a href="tel:4109446666" class="btn btn-outline-blue btn-small">Call Now</a>
+                            <a href="sms:4109446666" class="btn btn-primary btn-small">Text Now</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="order-1 md:order-2 flex justify-center">
-                <img src="https://placehold.co/600x400/a7f3d0/065f46?text=Happy+Patients" alt="About Us Image" class="rounded-2xl shadow-xl w-full max-w-md object-cover">
+        </section>
+
+        <section class="why-choose-us-section reveal-on-scroll">
+            <div class="container">
+                <h2>The Smiles R Us Advantage</h2>
+                <div class="advantage-grid">
+                    <div class="advantage-item reveal-up">
+                        <i class="fas fa-microchip icon-large"></i>
+                        <h3>Advanced Technology</h3>
+                        <p>Utilizing the latest dental innovations for precise diagnoses and effective treatments.</p>
+                    </div>
+                    <div class="advantage-item reveal-up">
+                        <i class="fas fa-user-md icon-large"></i>
+                        <h3>Experienced Dentists</h3>
+                        <p>Our team of skilled professionals provides exceptional care with years of expertise.</p>
+                    </div>
+                    <div class="advantage-item reveal-up">
+                        <i class="fas fa-couch icon-large"></i>
+                        <h3>Unmatched Patient Comfort</h3>
+                        <p>Relax in our serene environment, designed to make your dental visit stress-free.</p>
+                    </div>
+                    <div class="advantage-item reveal-up">
+                        <i class="fas fa-clipboard-list icon-large"></i>
+                        <h3>Personalized Treatment</h3>
+                        <p>Customized care plans tailored to your unique oral health needs and goals.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials-section reveal-on-scroll">
+            <div class="container">
+                <h2>Transforming Smiles, Transforming Lives</h2>
+                <div class="testimonial-carousel">
+                    <div class="testimonial-slide active">
+                        <img src="https://i.pravatar.cc/100?img=33" alt="Patient 1" class="patient-avatar">
+                        <p class="quote">"Smiles R Us gave me the confidence to smile again! The team is so caring and professional. Truly life-changing!"</p>
+                        <p class="patient-name">– Sarah J.</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <img src="https://i.pravatar.cc/100?img=25" alt="Patient 2" class="patient-avatar">
+                        <p class="quote">"The best dental experience I've ever had. From booking to treatment, everything was seamless and comfortable."</p>
+                        <p class="patient-name">– Mark T.</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <img src="https://i.pravatar.cc/100?img=50" alt="Patient 3" class="patient-avatar">
+                        <p class="quote">"I appreciate their transparent approach to treatment and financing. High-quality care without any surprises."</p>
+                        <p class="patient-name">– Emily R.</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="secondary-cta-section reveal-on-scroll">
+            <div class="container">
+                <h2>Ready to Achieve Your Best Smile?</h2>
+                <p>Schedule your visit today and let us guide you to optimal oral health.</p>
+                <a href="schedule-an-appointment" class="btn btn-cta">Schedule Your Appointment</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-col logo-col">
+                <a href="/"><img src="https://source.unsplash.com/180x50/?dental-logo,white" alt="Smiles R Us Logo" class="footer-logo" style="filter: invert(1);"></a>
+                <p>Your trusted partner for a brighter, healthier smile.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="why-choose-us">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Our Locations</h3>
+                <ul>
+                    <li><a href="dundalk">Dundalk</a></li>
+                    <li><a href="ellicott-city">Ellicott City</a></li>
+                    <li><a href="woodlawn">Woodlawn</a></li>
+                    <li><a href="baltimore-reisterstown">Baltimore-Reisterstown</a></li>
+                    <li><a href="baltimore-garrison">Baltimore-Garrison</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Multiple Locations Across MD</p>
+                <p><i class="fas fa-phone-alt"></i> <a href="tel:4109470606">410-947-0606</a></p> <p><i class="fas fa-envelope"></i> <a href="mailto:info@smilesrus.com">info@smilesrus.com</a></p>
+                <p class="hours"><i class="fas fa-clock"></i> Mon-Fri: 9AM - 5PM</p>
             </div>
         </div>
-    </section>
-
-    <!-- Services & Coupons Section (New Tabbed Content) -->
-    <section id="additional-pages" class="py-16 md:py-24 bg-blue-50 rounded-t-3xl">
-        <div class="container mx-auto px-6 md:px-12 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-blue-700 mb-12">Explore Our Offerings</h2>
-
-            <div class="max-w-6xl mx-auto bg-white p-8 rounded-2xl shadow-lg">
-                <!-- Tab Buttons -->
-                <div class="flex flex-wrap justify-center border-b border-gray-200 mb-8">
-                    <button class="tab-button py-3 px-6 text-lg font-medium text-gray-600 hover:text-blue-700 hover:border-blue-700 border-b-2 border-transparent transition duration-300 active-tab" data-tab="our-services-tab">
-                        Our Services
-                    </button>
-                    <button class="tab-button py-3 px-6 text-lg font-medium text-gray-600 hover:text-blue-700 hover:border-blue-700 border-b-2 border-transparent transition duration-300" data-tab="dental-coupons-tab">
-                        Dental Coupons
-                    </button>
-                </div>
-
-                <!-- Tab Content: Our Services -->
-                <div id="our-services-tab" class="tab-content active-content">
-                    <h3 class="text-2xl font-bold text-blue-700 mb-8">Comprehensive Dental Care for Your Family</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <!-- Service Card 1 -->
-                        <div class="bg-gray-50 p-6 rounded-xl shadow-md">
-                            <i class="fas fa-stethoscope text-blue-500 text-4xl mb-4"></i>
-                            <h4 class="text-xl font-semibold text-gray-800 mb-2">General Dentistry</h4>
-                            <p class="text-gray-600 text-sm">Routine check-ups, professional cleanings, fluoride treatments, and dental sealants to maintain optimal oral health and prevent future issues.</p>
-                        </div>
-                        <!-- Service Card 2 -->
-                        <div class="bg-gray-50 p-6 rounded-xl shadow-md">
-                            <i class="fas fa-star text-yellow-500 text-4xl mb-4"></i>
-                            <h4 class="text-xl font-semibold text-gray-800 mb-2">Cosmetic Dentistry</h4>
-                            <p class="text-gray-600 text-sm">Transform your smile with teeth whitening, porcelain veneers, dental bonding, and smile makeovers for a radiant appearance.</p>
-                        </div>
-                        <!-- Service Card 3 -->
-                        <div class="bg-gray-50 p-6 rounded-xl shadow-md">
-                            <i class="fas fa-crown text-gray-500 text-4xl mb-4"></i>
-                            <h4 class="text-xl font-semibold text-gray-800 mb-2">Restorative Dentistry</h4>
-                            <p class="text-gray-600 text-sm">Restore damaged or missing teeth with durable fillings, crowns, bridges, dental implants, and comfortable dentures.</p>
-                        </div>
-                        <!-- Service Card 4 -->
-                        <div class="bg-gray-50 p-6 rounded-xl shadow-md">
-                            <i class="fas fa-child text-pink-500 text-4xl mb-4"></i>
-                            <h4 class="text-xl font-semibold text-gray-800 mb-2">Pediatric Dentistry</h4>
-                            <p class="text-gray-600 text-sm">Specialized, gentle dental care for infants, children, and adolescents, focusing on early prevention and healthy habits.</p>
-                        </div>
-                        <!-- Service Card 5 -->
-                        <div class="bg-gray-50 p-6 rounded-xl shadow-md">
-                            <i class="fas fa-align-left text-purple-500 text-4xl mb-4"></i>
-                            <h4 class="text-xl font-semibold text-gray-800 mb-2">Orthodontics</h4>
-                            <p class="text-gray-600 text-sm">Achieve a perfectly aligned bite and straight teeth with traditional braces, clear aligners (Invisalign), and retainers.</p>
-                        </div>
-                        <!-- Service Card 6 -->
-                        <div class="bg-gray-50 p-6 rounded-xl shadow-md">
-                            <i class="fas fa-syringe text-red-500 text-4xl mb-4"></i>
-                            <h4 class="text-xl font-semibold text-gray-800 mb-2">Emergency Dental Care</h4>
-                            <p class="text-gray-600 text-sm">Immediate attention for dental emergencies like severe toothaches, broken teeth, or knocked-out teeth to alleviate pain and prevent further damage.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tab Content: Dental Coupons -->
-                <div id="dental-coupons-tab" class="tab-content hidden">
-                    <h3 class="text-2xl font-bold text-blue-700 mb-8">Exclusive Savings for Your Smile!</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <!-- Coupon Card 1 -->
-                        <div class="bg-gradient-to-r from-green-400 to-green-600 text-white p-6 rounded-xl shadow-lg relative overflow-hidden">
-                            <div class="absolute top-0 left-0 bg-white bg-opacity-20 w-24 h-24 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
-                            <div class="absolute bottom-0 right-0 bg-white bg-opacity-20 w-24 h-24 rounded-full translate-x-1/2 translate-y-1/2"></div>
-                            <h4 class="text-3xl font-bold mb-2">20% Off Your First Visit!</h4>
-                            <p class="text-lg mb-4">New patients enjoy a discount on their initial comprehensive exam and cleaning.</p>
-                            <div class="border-t border-dashed border-white border-opacity-70 pt-4 mt-4">
-                                <p class="font-mono text-xl tracking-wider">CODE: SMILE2025</p>
-                                <p class="text-sm mt-1 opacity-80">Valid until: 12/31/2025. Cannot be combined with other offers.</p>
-                            </div>
-                        </div>
-                        <!-- Coupon Card 2 -->
-                        <div class="bg-gradient-to-r from-purple-400 to-purple-600 text-white p-6 rounded-xl shadow-lg relative overflow-hidden">
-                            <div class="absolute top-0 left-0 bg-white bg-opacity-20 w-24 h-24 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
-                            <div class="absolute bottom-0 right-0 bg-white bg-opacity-20 w-24 h-24 rounded-full translate-x-1/2 -translate-y-1/2"></div>
-                            <h4 class="text-3xl font-bold mb-2">Free Teeth Whitening Consultation</h4>
-                            <p class="text-lg mb-4">Discover your options for a brighter smile with a complimentary consultation.</p>
-                            <div class="border-t border-dashed border-white border-opacity-70 pt-4 mt-4">
-                                <p class="font-mono text-xl tracking-wider">CODE: BRIGHTSMILE</p>
-                                <p class="text-sm mt-1 opacity-80">Offer valid for a limited time. Consultation only.</p>
-                            </div>
-                        </div>
-                        <!-- Coupon Card 3 -->
-                        <div class="bg-gradient-to-r from-orange-400 to-orange-600 text-white p-6 rounded-xl shadow-lg relative overflow-hidden">
-                            <div class="absolute top-0 left-0 bg-white bg-opacity-20 w-24 h-24 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
-                            <div class="absolute bottom-0 right-0 bg-white bg-opacity-20 w-24 h-24 rounded-full translate-x-1/2 translate-y-1/2"></div>
-                            <h4 class="text-3xl font-bold mb-2">$50 Off Any Orthodontic Treatment</h4>
-                            <p class="text-lg mb-4">Start your journey to a straighter smile and save on braces or clear aligners.</p>
-                            <div class="border-t border-dashed border-white border-opacity-70 pt-4 mt-4">
-                                <p class="font-mono text-xl tracking-wider">CODE: ORTHOSAVE50</p>
-                                <p class="text-sm mt-1 opacity-80">Minimum treatment cost may apply. See clinic for details.</p>
-                            </div>
-                        </div>
-                        <!-- Coupon Card 4 -->
-                        <div class="bg-gradient-to-r from-blue-400 to-blue-600 text-white p-6 rounded-xl shadow-lg relative overflow-hidden">
-                            <div class="absolute top-0 left-0 bg-white bg-opacity-20 w-24 h-24 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
-                            <div class="absolute bottom-0 right-0 bg-white bg-opacity-20 w-24 h-24 rounded-full translate-x-1/2 translate-y-1/2"></div>
-                            <h4 class="text-3xl font-bold mb-2">Kids' First Exam & Cleaning for $49</h4>
-                            <p class="text-lg mb-4">A special offer for our youngest patients to ensure a healthy start.</p>
-                            <div class="border-t border-dashed border-white border-opacity-70 pt-4 mt-4">
-                                <p class="font-mono text-xl tracking-wider">CODE: KIDSSMILE</p>
-                                <p class="text-sm mt-1 opacity-80">For children under 12. New patients only.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="py-16 md:py-24 container mx-auto px-6 md:px-12">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-blue-700">What Our Patients Say</h2>
-            <p class="text-gray-600 mt-4 text-lg">Hear from those who trust us with their smiles.</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Testimonial Card 1 -->
-            <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-blue-500">
-                <p class="text-gray-700 italic mb-4">"SmilesRUs Dentistry provided me with the best dental experience I've ever had. The staff is incredibly friendly, and Dr. Smith is truly amazing!"</p>
-                <div class="flex items-center">
-                    <img src="https://placehold.co/60x60/e0e7ff/4338ca?text=JD" alt="Patient Avatar" class="w-12 h-12 rounded-full mr-4 object-cover">
-                    <div>
-                        <p class="font-semibold text-gray-800">Jane Doe</p>
-                        <p class="text-gray-500 text-sm">Happy Patient</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Testimonial Card 2 -->
-            <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-teal-500">
-                <p class="text-gray-700 italic mb-4">"I used to dread dental visits, but SmilesRUs changed that. Their gentle approach and clear explanations made me feel completely at ease."</p>
-                <div class="flex items-center">
-                    <img src="https://placehold.co/60x60/ffe4e6/be185d?text=MS" alt="Patient Avatar" class="w-12 h-12 rounded-full mr-4 object-cover">
-                    <div>
-                        <p class="font-semibold text-gray-800">Mark S.</p>
-                        <p class="text-gray-500 text-sm">Long-term Client</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Testimonial Card 3 -->
-            <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-purple-500">
-                <p class="text-gray-700 italic mb-4">"The results of my cosmetic treatment are phenomenal! I can't stop smiling. Thank you, SmilesRUs, for giving me my confidence back."</p>
-                <div class="flex items-center">
-                    <img src="https://placehold.co/60x60/dbeafe/1e40af?text=AL" alt="Patient Avatar" class="w-12 h-12 rounded-full mr-4 object-cover">
-                    <div>
-                        <p class="font-semibold text-gray-800">Anna L.</p>
-                        <p class="text-gray-500 text-sm">New Smile</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="bg-blue-600 text-white py-16 md:py-24 rounded-t-3xl">
-        <div class="container mx-auto px-6 md:px-12 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12">Get In Touch</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-                <!-- Contact Info -->
-                <div class="text-left">
-                    <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
-                    <p class="mb-4 flex items-center"><i class="fas fa-map-marker-alt mr-3 text-xl"></i> 123 Dental Street, Smile City, ST 12345</p>
-                    <p class="mb-4 flex items-center"><i class="fas fa-phone mr-3 text-xl"></i> (123) 456-7890</p>
-                    <p class="mb-4 flex items-center"><i class="fas fa-envelope mr-3 text-xl"></i> info@smilesrus.com</p>
-                    <p class="mb-6 flex items-center"><i class="fas fa-clock mr-3 text-xl"></i> Mon-Fri: 9:00 AM - 5:00 PM</p>
-
-                    <h3 class="text-2xl font-semibold mb-4">Find Us on the Map</h3>
-                    <!-- Placeholder for Map -->
-                    <div class="bg-gray-200 h-64 rounded-xl overflow-hidden shadow-lg">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.2500000000005!2d-122.08424999999999!3d37.421999999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb5e0f0a0a0a1%3A0x808fb5e0f0a0a0a1!2sGoogleplex!5e0!3m2!1sen!2sus!4v1678901234567!5m2!1sen!2sus"
-                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                            title="SmilesRUs Dentistry Location"
-                        ></iframe>
-                    </div>
-                </div>
-
-                <!-- Contact Form -->
-                <div class="bg-white p-8 rounded-2xl shadow-xl text-gray-800">
-                    <h3 class="text-2xl font-semibold mb-6 text-blue-700">Send Us a Message</h3>
-                    <form id="contact-form">
-                        <div class="mb-4">
-                            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
-                            <input type="text" id="name" name="name" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your Name" required>
-                        </div>
-                        <div class="mb-4">
-                            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
-                            <input type="email" id="email" name="email" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="your@example.com" required>
-                        </div>
-                        <div class="mb-6">
-                            <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message</label>
-                            <textarea id="message" name="message" rows="5" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your message..." required></textarea>
-                        </div>
-                        <button type="submit" class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-full focus:outline-none focus:shadow-outline transition duration-300 transform hover:scale-105 w-full">
-                            Send Message
-                        </button>
-                        <div id="form-message" class="mt-4 text-center text-sm font-medium hidden"></div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer class="bg-gray-800 text-white py-8 px-6 md:px-12 rounded-t-xl">
-        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left">
-            <p class="mb-4 md:mb-0">&copy; 2025 SmilesRUs Dentistry. All rights reserved.</p>
-            <div class="flex space-x-6">
-                <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-facebook-f text-xl"></i></a>
-                <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-twitter text-xl"></i></a>
-                <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-instagram text-xl"></i></a>
-                <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-linkedin-in text-xl"></i></a>
-            </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Smiles R Us. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
         </div>
     </footer>
 
+    <div class="fab-container">
+        <div class="fab-options">
+            <a href="schedule-an-appointment" class="fab-option book-now"><i class="fas fa-calendar-alt"></i> <span>Book Now</span></a>
+            <a href="tel:4109470606" class="fab-option call-us"><i class="fas fa-phone-alt"></i> <span>Call Us</span></a>
+            <a href="sms:4109470606" class="fab-option text-us"><i class="fas fa-comment-dots"></i> <span>Text Us</span></a>
+            <a href="contact" class="fab-option chat-now"><i class="fas fa-comments"></i> <span>Chat Now</span></a>
+        </div>
+        <div class="fab-main">
+            <i class="fas fa-plus"></i>
+        </div>
+    </div>
+
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.remove('hidden');
-        });
-
-        closeMobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-        });
-
-        // Tab functionality for "Services & Coupons" section
-        const tabButtons = document.querySelectorAll('.tab-button');
-        const tabContents = document.querySelectorAll('.tab-content');
-
-        tabButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove active class from all buttons and hide all content
-                tabButtons.forEach(btn => {
-                    btn.classList.remove('active-tab', 'border-blue-700', 'text-blue-700');
-                    btn.classList.add('border-transparent', 'text-gray-600');
-                });
-                tabContents.forEach(content => {
-                    content.classList.add('hidden');
-                });
-
-                // Add active class to clicked button and show corresponding content
-                button.classList.add('active-tab', 'border-blue-700', 'text-blue-700');
-                button.classList.remove('border-transparent', 'text-gray-600');
-                const targetTabId = button.dataset.tab;
-                document.getElementById(targetTabId).classList.remove('hidden');
-            });
-        });
-
-        // Set initial active tab
         document.addEventListener('DOMContentLoaded', () => {
-            const initialTabButton = document.querySelector('.tab-button.active-tab');
-            if (initialTabButton) {
-                initialTabButton.click(); // Simulate a click to activate the first tab
+            // --- Scroll-triggered Animations (Reveal on Scroll) ---
+            const sections = document.querySelectorAll('.reveal-on-scroll');
+            const options = {
+                root: null, // viewport
+                rootMargin: '0px',
+                threshold: 0.2 // Trigger when 20% of the section is visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        // Optional: Stop observing once element is visible
+                        // observer.unobserve(entry.target);
+                    } else {
+                        // Optional: Remove 'visible' class if element scrolls out of view
+                        // entry.target.classList.remove('visible');
+                    }
+                });
+            }, options);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // Ensure initial elements in view are animated on load
+            const welcomeSection = document.getElementById('about');
+            if (welcomeSection) {
+                const welcomeImage = welcomeSection.querySelector('.welcome-image');
+                const welcomeContent = welcomeSection.querySelector('.welcome-content');
+                if (welcomeImage) observer.observe(welcomeImage);
+                if (welcomeContent) observer.observe(welcomeContent);
             }
-        });
 
-        // Simple form submission handler
-        const contactForm = document.getElementById('contact-form');
-        const formMessage = document.getElementById('form-message');
 
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            formMessage.classList.remove('hidden', 'text-green-600', 'text-red-600');
-            formMessage.classList.add('text-blue-600');
-            formMessage.textContent = 'Sending your message...';
+            // --- Testimonials Carousel ---
+            const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+            const carouselDots = document.querySelectorAll('.carousel-nav .dot');
+            let currentTestimonial = 0;
+            let testimonialInterval; // To hold the interval ID
 
-            // Simulate form submission
-            setTimeout(() => {
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const message = document.getElementById('message').value;
+            function showTestimonial(index) {
+                testimonialSlides.forEach((slide, i) => {
+                    slide.classList.remove('active');
+                    if (i === index) {
+                        slide.classList.add('active');
+                    }
+                });
+                carouselDots.forEach((dot, i) => {
+                    dot.classList.remove('active');
+                    if (i === index) {
+                        dot.classList.add('active');
+                    }
+                });
+            }
 
-                if (name && email && message) {
-                    formMessage.classList.remove('text-blue-600');
-                    formMessage.classList.add('text-green-600');
-                    formMessage.textContent = 'Thank you for your message! We will get back to you soon.';
-                    contactForm.reset(); // Clear the form
-                } else {
-                    formMessage.classList.remove('text-blue-600');
-                    formMessage.classList.add('text-red-600');
-                    formMessage.textContent = 'Please fill in all fields.';
+            function nextTestimonial() {
+                currentTestimonial = (currentTestimonial + 1) % testimonialSlides.length;
+                showTestimonial(currentTestimonial);
+            }
+
+            function startTestimonialCarousel() {
+                testimonialInterval = setInterval(nextTestimonial, 7000); // Change every 7 seconds
+            }
+
+            function resetTestimonialCarousel() {
+                clearInterval(testimonialInterval);
+                startTestimonialCarousel();
+            }
+
+            // Dot navigation
+            carouselDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    showTestimonial(index);
+                    currentTestimonial = index; // Update current index
+                    resetTestimonialCarousel(); // Reset timer on manual click
+                });
+            });
+
+            showTestimonial(currentTestimonial); // Initial display
+            startTestimonialCarousel(); // Start auto-play
+
+
+            // --- Global Easy Access Floating Button (FAB) ---
+            const fabMain = document.querySelector('.fab-main');
+            const fabOptions = document.querySelector('.fab-options');
+            const fabContainer = document.querySelector('.fab-container'); // Get the container for outside click detection
+
+            fabMain.addEventListener('click', (event) => {
+                event.stopPropagation(); // Prevent click from bubbling to document
+                fabOptions.classList.toggle('open');
+                fabMain.classList.toggle('active'); // Rotate '+' icon
+            });
+
+            // Close FAB options when clicking outside the FAB container
+            document.addEventListener('click', (event) => {
+                if (fabOptions.classList.contains('open') && !fabContainer.contains(event.target)) {
+                    fabOptions.classList.remove('open');
+                    fabMain.classList.remove('active');
                 }
-                formMessage.classList.remove('hidden');
-            }, 1500); // Simulate network delay
+            });
+
+
+            // --- Mobile Menu Functionality ---
+            const hamburgerMenu = document.querySelector('.hamburger-menu');
+            const mobileNavOverlay = document.querySelector('.mobile-nav-overlay');
+            const closeBtn = document.querySelector('.mobile-nav-overlay .close-btn');
+            const mobileDropdowns = document.querySelectorAll('.mobile-nav-overlay .mobile-dropdown > a');
+            const mobileSubmenus = document.querySelectorAll('.mobile-nav-overlay .mobile-dropdown .submenu-container > a');
+
+
+            hamburgerMenu.addEventListener('click', () => {
+                mobileNavOverlay.classList.add('open');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling background
+            });
+
+            closeBtn.addEventListener('click', () => {
+                mobileNavOverlay.classList.remove('open');
+                document.body.style.overflow = ''; // Restore scrolling
+            });
+
+            // Handle main mobile dropdowns
+            mobileDropdowns.forEach(dropdownToggle => {
+                dropdownToggle.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const dropdownContent = dropdownToggle.nextElementSibling;
+                    if (dropdownContent && dropdownContent.classList.contains('mobile-dropdown-content')) {
+                        // Close other open dropdowns at the same level
+                        mobileDropdowns.forEach(otherToggle => {
+                            if (otherToggle !== dropdownToggle) {
+                                const otherContent = otherToggle.nextElementSibling;
+                                if (otherContent && otherContent.classList.contains('open')) {
+                                    otherContent.classList.remove('open');
+                                    const otherIcon = otherToggle.querySelector('i');
+                                    if (otherIcon) { otherIcon.classList.remove('fa-chevron-up'); otherIcon.classList.add('fa-chevron-down'); }
+                                }
+                            }
+                        });
+
+                        dropdownContent.classList.toggle('open');
+                        const icon = dropdownToggle.querySelector('i');
+                        if (icon) {
+                            icon.classList.toggle('fa-chevron-down');
+                            icon.classList.toggle('fa-chevron-up');
+                        }
+                    }
+                });
+            });
+
+            // Handle mobile submenus (nested dropdowns)
+            mobileSubmenus.forEach(submenuToggle => {
+                submenuToggle.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const submenuContent = submenuToggle.nextElementSibling;
+                    if (submenuContent && submenuContent.classList.contains('submenu-content')) {
+                        // Close other open submenus at the same level within this parent dropdown
+                        const parentDropdownContent = submenuToggle.closest('.mobile-dropdown-content');
+                        if (parentDropdownContent) {
+                            parentDropdownContent.querySelectorAll('.submenu-container > a').forEach(otherSubmenuToggle => {
+                                if (otherSubmenuToggle !== submenuToggle) {
+                                    const otherSubmenuContent = otherSubmenuToggle.nextElementSibling;
+                                    if (otherSubmenuContent && otherSubmenuContent.classList.contains('open')) {
+                                        otherSubmenuContent.classList.remove('open');
+                                        const otherSubmenuIcon = otherSubmenuToggle.querySelector('i');
+                                        if (otherSubmenuIcon) { otherSubmenuIcon.classList.remove('fa-chevron-up'); otherSubmenuIcon.classList.add('fa-chevron-down'); }
+                                    }
+                                }
+                            });
+                        }
+                        
+                        submenuContent.classList.toggle('open');
+                        const icon = submenuToggle.querySelector('i');
+                        if (icon) {
+                            icon.classList.toggle('fa-chevron-down');
+                            icon.classList.toggle('fa-chevron-up');
+                        }
+                    }
+                });
+            });
+
+            // Close mobile menu when a direct link (not a dropdown toggle) is clicked
+            const mobileDirectLinks = document.querySelectorAll('.mobile-nav-overlay ul li:not(.mobile-dropdown) > a, .mobile-dropdown-content a:not(.submenu-container > a)');
+            mobileDirectLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileNavOverlay.classList.remove('open');
+                    document.body.style.overflow = '';
+                    // Collapse all dropdowns when menu closes fully
+                    document.querySelectorAll('.mobile-dropdown-content.open').forEach(content => content.classList.remove('open'));
+                    document.querySelectorAll('.mobile-dropdown > a i, .submenu-container > a i').forEach(icon => { icon.classList.remove('fa-chevron-up'); icon.classList.add('fa-chevron-down'); });
+                });
+            });
+
+            // Close main mobile dropdowns if mobile nav overlay is closed by close button or outside click
+            closeBtn.addEventListener('click', collapseAllMobileDropdowns);
+            mobileNavOverlay.addEventListener('click', (e) => {
+                if (e.target === mobileNavOverlay) { // Only if clicking the overlay itself, not a child
+                    collapseAllMobileDropdowns();
+                }
+            });
+
+            function collapseAllMobileDropdowns() {
+                document.querySelectorAll('.mobile-dropdown-content.open').forEach(content => content.classList.remove('open'));
+                document.querySelectorAll('.mobile-dropdown > a i, .submenu-container > a i').forEach(icon => { icon.classList.remove('fa-chevron-up'); icon.classList.add('fa-chevron-down'); });
+                document.body.style.overflow = ''; // Restore scrolling
+            }
         });
     </script>
 </body>
