@@ -6,16 +6,18 @@
     <title>Smiles R Us - Your Journey to a Confident Smile</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <style>
-        /* --- NEW Color Palette & Typography (Crisp White & Modern Blue) --- */
+        /* --- NEW Color Palette & Typography (Obsidian Grandeur) --- */
         :root {
-            --primary-white-bg: #FFFFFF; /* Crisp White Background */
-            --off-white-bg: #F8F8F8; /* Subtle off-white for sections */
-            --primary-blue-dark: #2A629A; /* Corporate Blue - Headings, main elements */
-            --accent-blue-light: #4A90E2; /* Vibrant Sky Blue - CTAs, highlights */
-            --secondary-accent-gray: #EFEFEF; /* Very light cool gray for subtle details */
-            --text-dark: #333333; /* Dark text for readability */
-            --text-light-on-dark: #f0f0f0; /* Light text for dark backgrounds */
-            --text-subtle-gray: #777777; /* For less prominent text */
+            --primary-dark-bg: #1A1A1A; /* Obsidian Black / Very Deep Charcoal */
+            --secondary-dark-bg: #222222; /* Slightly lighter charcoal for contrast sections */
+            --tertiary-dark-bg: #0D0D0D; /* Even darker for footers/elements */
+            --accent-gold-base: #B8860B; /* Burnished Gold / Muted Copper */
+            --accent-gold-light: #D4AF37; /* Champagne Gold for highlights */
+            --accent-green-dark: #2F4F4F; /* Deep Forest Green for specific contrast (Text Us button) */
+            --white: #ffffff;
+            --off-white: #f5f5f5; /* For main body text on dark background */
+            --text-light-subtle: #cccccc; /* For less prominent light text */
+            --text-dark-contrast: #000000; /* For text on bright accents like gold */
 
             --font-serif: 'Playfair Display', serif;
             --font-sans-serif: 'Lato', sans-serif;
@@ -31,8 +33,8 @@
         body {
             font-family: var(--font-sans-serif);
             line-height: 1.6;
-            color: var(--text-dark);
-            background-color: var(--primary-white-bg);
+            color: var(--off-white); /* Default text color is light */
+            background-color: var(--primary-dark-bg);
             overflow-x: hidden; /* Prevent horizontal scroll from animations */
         }
 
@@ -44,7 +46,7 @@
 
         h1, h2, h3, h4, h5, h6 {
             font-family: var(--font-serif);
-            color: var(--primary-blue-dark);
+            color: var(--accent-gold-base); /* Headings in gold */
             margin-bottom: 20px;
         }
 
@@ -60,43 +62,42 @@
             margin-bottom: 40px;
             position: relative;
             padding-bottom: 10px;
-            color: var(--primary-blue-dark); /* Default heading color */
+            color: var(--accent-gold-base); /* Default heading color for dark sections */
         }
         h2::after {
             content: '';
             display: block;
             width: 80px;
             height: 3px;
-            background-color: var(--accent-blue-light); /* Underline in accent blue */
+            background-color: var(--accent-gold-light); /* Underline in lighter gold */
             margin: 10px auto 0;
             border-radius: 2px;
         }
-        /* H2 on dark backgrounds (e.g., Hero Overlay, Footer) */
-        section[style*="background-color: var(--primary-blue-dark)"] h2,
-        section[style*="background-color: var(--accent-blue-light)"] h2,
-        .main-footer h3 {
-            color: var(--primary-white-bg); /* White headings on dark sections */
+        /* H2 on light backgrounds (if any sections are light) */
+        section[style*="background-color: var(--primary-white-bg)"] h2,
+        section[style*="background-color: var(--off-white-bg)"] h2 {
+            color: var(--text-dark-contrast); /* Dark text on light sections */
         }
-        section[style*="background-color: var(--primary-blue-dark)"] h2::after,
-        section[style*="background-color: var(--accent-blue-light)"] h2::after {
-            background-color: var(--accent-blue-light); /* Accent blue underline on dark sections */
+        section[style*="background-color: var(--primary-white-bg)"] h2::after,
+        section[style*="background-color: var(--off-white-bg)"] h2::after {
+            background-color: var(--accent-gold-base); /* Gold underline on light sections */
         }
 
 
         p {
             margin-bottom: 15px;
             font-size: 1.1em;
-            color: var(--text-dark);
+            color: var(--off-white);
         }
 
         a {
             text-decoration: none;
-            color: var(--accent-blue-light); /* Links in accent blue */
+            color: var(--accent-gold-base); /* Links in gold */
             transition: color 0.3s ease;
         }
 
         a:hover {
-            color: var(--primary-blue-dark);
+            color: var(--accent-gold-light);
         }
 
         img {
@@ -121,67 +122,76 @@
         }
 
         .btn-primary {
-            background-color: var(--accent-blue-light);
-            color: var(--primary-white-bg); /* White text on accent blue */
-            border: 2px solid var(--accent-blue-light);
+            background-color: var(--accent-gold-base); /* Gold base */
+            color: var(--text-dark-contrast); /* Dark text on gold */
+            border: 2px solid var(--accent-gold-base);
+            /* Subtle gradient for depth */
+            background-image: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--accent-gold-base) 100%);
+            box-shadow: 0 4px 15px rgba(184, 134, 11, 0.4);
         }
 
         .btn-primary:hover {
-            background-color: var(--primary-blue-dark);
-            border-color: var(--primary-blue-dark);
-            color: var(--primary-white-bg);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            background-color: var(--accent-gold-light);
+            border-color: var(--accent-gold-light);
+            color: var(--text-dark-contrast);
+            box-shadow: 0 8px 25px rgba(184, 134, 11, 0.6);
             transform: translateY(-3px);
+            background-image: linear-gradient(135deg, var(--accent-gold-base) 0%, var(--accent-gold-light) 100%);
         }
 
         .btn-secondary {
             background-color: transparent;
-            color: var(--primary-blue-dark);
-            border: 2px solid var(--primary-blue-dark);
+            color: var(--accent-gold-base);
+            border: 2px solid var(--accent-gold-base);
         }
 
         .btn-secondary:hover {
-            background-color: var(--primary-blue-dark);
-            color: var(--primary-white-bg);
+            background-color: var(--accent-gold-base);
+            color: var(--text-dark-contrast);
         }
 
-        .btn-outline-blue { /* New outline button for this theme */
+        .btn-outline-gold {
             background-color: transparent;
-            color: var(--primary-blue-dark);
-            border: 2px solid var(--primary-blue-dark);
+            color: var(--accent-gold-base);
+            border: 2px solid var(--accent-gold-base);
         }
 
-        .btn-outline-blue:hover {
-            background-color: var(--primary-blue-dark);
-            color: var(--primary-white-bg);
+        .btn-outline-gold:hover {
+            background-color: var(--accent-gold-base);
+            color: var(--text-dark-contrast);
         }
 
         .btn-cta {
-            background-color: var(--primary-blue-dark);
-            color: var(--primary-white-bg);
-            border: 2px solid var(--primary-blue-dark);
+            background-color: var(--accent-gold-base);
+            color: var(--text-dark-contrast);
+            border: 2px solid var(--accent-gold-base);
             padding: 18px 40px;
             font-size: 1.3em;
             border-radius: 50px;
+            /* Subtle gradient for depth */
+            background-image: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--accent-gold-base) 100%);
+            box-shadow: 0 6px 20px rgba(184, 134, 11, 0.5);
         }
 
         .btn-cta:hover {
-            background-color: var(--accent-blue-light);
-            border-color: var(--accent-blue-light);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            background-color: var(--accent-gold-light);
+            border-color: var(--accent-gold-light);
+            box-shadow: 0 10px 30px rgba(184, 134, 11, 0.7);
             transform: translateY(-4px);
+            background-image: linear-gradient(135deg, var(--accent-gold-base) 0%, var(--accent-gold-light) 100%);
         }
 
 
         /* --- Header --- */
         .main-header {
-            background-color: var(--primary-white-bg); /* White header */
+            background-color: var(--primary-dark-bg); /* Dark header */
             padding: 15px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Stronger shadow */
             position: sticky;
             top: 0;
             width: 100%;
             z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.05); /* Subtle bottom border */
         }
 
         .header-content {
@@ -194,7 +204,7 @@
         .logo img {
             height: 50px;
             width: auto;
-            /* No filter needed if logo is already dark/blue */
+            filter: brightness(0) invert(1); /* Makes logo white for dark bg */
         }
 
         .main-nav ul {
@@ -209,7 +219,7 @@
         }
 
         .main-nav ul li a {
-            color: var(--primary-blue-dark); /* Dark blue text on white header */
+            color: var(--off-white); /* Light text on dark header */
             font-weight: 500;
             padding: 10px 0;
             display: block;
@@ -218,10 +228,10 @@
         }
 
         .main-nav ul li a:hover {
-            color: var(--accent-blue-light); /* Accent blue on hover */
+            color: var(--accent-gold-base); /* Gold on hover */
         }
         .main-nav ul li a.active {
-            color: var(--accent-blue-light); /* Accent blue for active */
+            color: var(--accent-gold-base); /* Gold for active */
         }
         .main-nav ul li a::after {
             content: '';
@@ -231,7 +241,7 @@
             transform: translateX(-50%);
             width: 0;
             height: 2px;
-            background-color: var(--accent-blue-light); /* Accent blue underline */
+            background-color: var(--accent-gold-base); /* Gold underline */
             transition: width 0.3s ease;
         }
         .main-nav ul li a:hover::after,
@@ -244,11 +254,11 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: var(--primary-white-bg); /* White dropdown background */
-            min-width: 220px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            background-color: var(--secondary-dark-bg); /* Darker dropdown background */
+            min-width: 250px; /* Wider for more links */
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6); /* Stronger shadow */
             z-index: 1;
-            border-top: 3px solid var(--accent-blue-light); /* Accent blue border */
+            border-top: 3px solid var(--accent-gold-base); /* Gold border */
             border-radius: 0 0 8px 8px;
             padding: 10px 0;
             opacity: 0;
@@ -265,7 +275,7 @@
         }
 
         .dropdown-content a {
-            color: var(--text-dark);
+            color: var(--off-white);
             padding: 12px 18px;
             display: block;
             text-align: left;
@@ -273,8 +283,8 @@
         }
 
         .dropdown-content a:hover {
-            background-color: var(--secondary-accent-gray);
-            color: var(--primary-blue-dark);
+            background-color: var(--primary-dark-bg);
+            color: var(--accent-gold-base);
         }
 
         /* Submenu */
@@ -284,13 +294,13 @@
         .submenu-content {
             display: none;
             position: absolute;
-            left: 100%; /* Position to the right of parent menu item */
+            left: 100%;
             top: 0;
-            background-color: var(--primary-white-bg);
-            min-width: 220px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            border-top: 3px solid var(--accent-blue-light);
-            border-radius: 0 8px 8px 8px; /* Adjusted border radius */
+            background-color: var(--tertiary-dark-bg); /* Even darker for sub-submenu */
+            min-width: 250px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);
+            border-top: 3px solid var(--accent-gold-base);
+            border-radius: 0 8px 8px 8px;
             padding: 10px 0;
             opacity: 0;
             transform: translateX(10px);
@@ -307,6 +317,7 @@
             margin-left: 10px;
             font-size: 0.8em;
             transition: transform 0.3s ease;
+            color: var(--accent-gold-base);
         }
         .submenu-container:hover > a i {
             transform: rotate(90deg);
@@ -317,7 +328,7 @@
         .hamburger-menu {
             display: none;
             font-size: 2em;
-            color: var(--primary-blue-dark); /* Dark blue hamburger */
+            color: var(--off-white);
             cursor: pointer;
         }
 
@@ -327,7 +338,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: var(--primary-blue-dark); /* Dark blue mobile menu */
+            background-color: var(--primary-dark-bg); /* Dark mobile menu */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -349,7 +360,7 @@
             top: 25px;
             right: 25px;
             font-size: 2.5em;
-            color: var(--primary-white-bg);
+            color: var(--off-white);
             cursor: pointer;
         }
 
@@ -360,7 +371,7 @@
         }
 
         .mobile-nav-overlay ul li {
-            margin: 20px 0; /* Reduced vertical margin */
+            margin: 20px 0;
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.3s ease, transform 0.3s ease;
@@ -381,21 +392,21 @@
         .mobile-nav-overlay.open ul li:nth-child(9) { transition-delay: 0.5s; }
 
         .mobile-nav-overlay ul li a {
-            color: var(--primary-white-bg);
-            font-size: 1.6em; /* Slightly smaller font for mobile */
+            color: var(--off-white);
+            font-size: 1.6em;
             font-weight: 600;
             display: block;
-            padding: 8px 0; /* Smaller padding */
+            padding: 8px 0;
         }
 
         .mobile-nav-overlay ul li a:hover {
-            color: var(--accent-blue-light);
+            color: var(--accent-gold-base);
         }
 
         .mobile-nav-overlay .mobile-dropdown-content {
             background-color: rgba(0, 0, 0, 0.3);
-            margin-top: 10px; /* Reduced margin */
-            padding: 8px 0; /* Reduced padding */
+            margin-top: 10px;
+            padding: 8px 0;
             border-radius: 8px;
             overflow: hidden;
             max-height: 0;
@@ -407,26 +418,27 @@
             opacity: 1;
         }
         .mobile-nav-overlay .mobile-dropdown a {
-            font-size: 1.2em; /* Smaller font for mobile dropdowns */
+            font-size: 1.4em;
             padding: 6px 0;
         }
         .mobile-nav-overlay .mobile-dropdown .submenu-container > a i {
-            margin-left: 5px; /* Reduced margin */
+            margin-left: 5px;
             font-size: 0.7em;
+            color: var(--accent-gold-base);
         }
         .mobile-nav-overlay .mobile-dropdown .submenu-content {
-            position: relative; /* Submenus stack vertically on mobile */
+            position: relative;
             left: 0;
             top: 0;
-            background-color: rgba(0, 0, 0, 0.2); /* Even darker background */
-            border-top: none; /* No top border for stacking */
-            border-radius: 0; /* No border radius */
+            background-color: rgba(0, 0, 0, 0.2);
+            border-top: none;
+            border-radius: 0;
             padding: 5px 0;
             margin-top: 5px;
             box-shadow: none;
         }
         .mobile-nav-overlay .mobile-dropdown .submenu-content a {
-            padding: 5px 0; /* Smallest padding for sub-sub-items */
+            padding: 5px 0;
             font-size: 1.1em;
         }
         .btn-primary-mobile, .btn-secondary-mobile {
@@ -438,14 +450,15 @@
             border-radius: 50px;
         }
         .btn-primary-mobile {
-            background-color: var(--accent-blue-light);
-            color: var(--primary-white-bg);
-            border: 2px solid var(--accent-blue-light);
+            background-color: var(--accent-gold-base);
+            color: var(--text-dark-contrast);
+            border: 2px solid var(--accent-gold-base);
+            background-image: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--accent-gold-base) 100%);
         }
         .btn-secondary-mobile {
             background-color: transparent;
-            color: var(--primary-white-bg);
-            border: 2px solid var(--primary-white-bg);
+            color: var(--off-white);
+            border: 2px solid var(--off-white);
         }
 
 
@@ -457,7 +470,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            color: var(--primary-white-bg);
+            color: var(--white);
             overflow: hidden;
         }
 
@@ -482,8 +495,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://source.unsplash.com/random/1920x1080/?modern-dentistry,calming-blue') no-repeat center center/cover;
-            z-index: -3; /* Behind video */
+            background: url('https://source.unsplash.com/random/1920x1080/?modern-clinic-interior,gold,dark') no-repeat center center/cover;
+            z-index: -3;
         }
 
 
@@ -493,7 +506,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.3); /* Lighter overlay for brighter theme */
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)); /* Darker gradient overlay */
             z-index: -1;
         }
 
@@ -507,14 +520,14 @@
         .hero-content h1 {
             font-size: 5em;
             margin-bottom: 25px;
-            color: var(--primary-white-bg);
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+            color: var(--white); /* White headline on dark overlay */
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.8); /* Stronger shadow */
             letter-spacing: 1px;
         }
         .hero-content p {
             font-size: 1.6em;
             margin-bottom: 40px;
-            color: var(--text-light-on-dark);
+            color: var(--text-light-subtle); /* Subtle light text */
             font-weight: 300;
             line-height: 1.4;
         }
@@ -535,23 +548,25 @@
         }
         /* Specific hero button styling */
         .hero-btn.btn-primary {
-            background-color: var(--accent-blue-light);
-            color: var(--primary-white-bg);
-            border-color: var(--accent-blue-light);
+            background-color: var(--accent-gold-base);
+            color: var(--text-dark-contrast);
+            border-color: var(--accent-gold-base);
+            background-image: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--accent-gold-base) 100%);
         }
         .hero-btn.btn-primary:hover {
-            background-color: var(--primary-blue-dark);
-            border-color: var(--primary-blue-dark);
-            color: var(--primary-white-bg);
+            background-color: var(--accent-gold-light);
+            border-color: var(--accent-gold-light);
+            color: var(--text-dark-contrast);
+            box-shadow: 0 10px 30px rgba(184, 134, 11, 0.7);
         }
         .hero-btn.btn-secondary {
             background-color: transparent;
-            color: var(--primary-white-bg);
-            border-color: var(--primary-white-bg);
+            color: var(--off-white);
+            border-color: var(--off-white);
         }
         .hero-btn.btn-secondary:hover {
             background-color: rgba(255,255,255,0.1);
-            color: var(--accent-blue-light);
+            color: var(--accent-gold-base);
         }
 
         .scroll-down-arrow {
@@ -560,7 +575,7 @@
             left: 50%;
             transform: translateX(-50%);
             font-size: 2.5em;
-            color: var(--primary-white-bg);
+            color: var(--off-white);
             animation: bounce 2s infinite;
             z-index: 2;
         }
@@ -592,8 +607,8 @@
 
         /* Welcome Section */
         .welcome-section {
-            background-color: var(--primary-white-bg);
-            color: var(--text-dark);
+            background-color: var(--primary-dark-bg);
+            color: var(--off-white);
         }
 
         .welcome-grid {
@@ -606,7 +621,7 @@
             flex: 1;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
             transform: translateX(-80px);
             opacity: 0;
             transition: transform 1s ease-out, opacity 1s ease-out;
@@ -632,24 +647,24 @@
             text-align: left;
             margin-bottom: 25px;
             font-size: 3em;
-            color: var(--primary-blue-dark);
+            color: var(--accent-gold-base);
         }
         .welcome-content h2::after {
             margin-left: 0;
-            background-color: var(--accent-blue-light);
+            background-color: var(--accent-gold-light);
         }
 
         .accent-text {
-            color: var(--accent-blue-light);
+            color: var(--accent-gold-light);
             font-weight: 700;
         }
 
         /* Locations Section */
         .locations-section {
-            background-color: var(--off-white-bg); /* Off-white background */
+            background-color: var(--secondary-dark-bg); /* Slightly lighter dark for contrast */
         }
         .locations-section h2 {
-            color: var(--primary-blue-dark);
+            color: var(--accent-gold-base);
         }
 
         .location-grid {
@@ -659,16 +674,17 @@
         }
 
         .location-card {
-            background-color: var(--primary-white-bg);
+            background-color: var(--primary-dark-bg);
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
             text-align: center;
             transition: transform 0.4s ease, box-shadow 0.4s ease;
             padding-bottom: 30px;
             transform: translateY(70px);
             opacity: 0;
             transition: transform 1s ease-out, opacity 1s ease-out;
+            border: 2px solid transparent; /* For hover */
         }
         .locations-section.visible .location-card.reveal-up {
             transform: translateY(0);
@@ -683,48 +699,80 @@
 
         .location-card:hover {
             transform: translateY(-15px);
-            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+            border-color: var(--accent-gold-base); /* Gold border on hover */
         }
 
         .location-card img {
             width: 100%;
             height: 200px;
             object-fit: cover;
-            border-bottom: 3px solid var(--accent-blue-light); /* Accent blue border */
+            filter: brightness(0.6) grayscale(0.2); /* Darken & desaturate for theme */
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+        .location-card:hover img {
+            filter: brightness(0.9) grayscale(0); /* Brighter and full color on hover */
+            transform: scale(1.05);
         }
 
         .location-card h3 {
             font-size: 1.8em;
             margin: 25px 0 15px;
-            color: var(--primary-blue-dark);
+            color: var(--accent-gold-base);
         }
 
         .location-card p {
             font-size: 1.05em;
-            color: var(--text-subtle-gray);
+            color: var(--text-light-subtle);
             padding: 0 25px;
+            margin-bottom: 15px; /* Adjust spacing */
+        }
+        .location-card p.phone-number { /* Style for the phone number */
+            font-weight: 700;
+            color: var(--accent-gold-light);
+            font-size: 1.1em;
             margin-bottom: 25px;
         }
-        .location-card .btn {
-            background-color: var(--primary-blue-dark);
-            color: var(--primary-white-bg);
-            border-color: var(--primary-blue-dark);
-            font-size: 0.95em;
-            padding: 10px 20px;
+        .location-card .branch-actions { /* Styling for the call/text buttons in location cards */
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
         }
-        .location-card .btn:hover {
-            background-color: var(--accent-blue-light);
-            color: var(--primary-white-bg);
-            border-color: var(--accent-blue-light);
+        .location-card .branch-actions .btn {
+            padding: 10px 18px;
+            font-size: 0.9em;
+            border-radius: 30px;
+        }
+        /* Specific colors for call/text buttons on location cards */
+        .location-card .branch-actions .btn-call {
+            background-color: var(--accent-gold-base);
+            color: var(--text-dark-contrast);
+            border: 2px solid var(--accent-gold-base);
+            background-image: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--accent-gold-base) 100%);
+        }
+        .location-card .branch-actions .btn-call:hover {
+            background-color: var(--accent-gold-light);
+            border-color: var(--accent-gold-light);
+        }
+        .location-card .branch-actions .btn-text {
+            background-color: var(--accent-green-dark); /* Deep green for text button */
+            color: var(--off-white);
+            border: 2px solid var(--accent-green-dark);
+            background-image: linear-gradient(135deg, #3E6464 0%, var(--accent-green-dark) 100%); /* Subtle green gradient */
+        }
+        .location-card .branch-actions .btn-text:hover {
+            background-color: #3E6464;
+            border-color: #3E6464;
         }
 
 
         /* Services Section */
         .services-section {
-            background-color: var(--primary-white-bg);
+            background-color: var(--primary-dark-bg);
         }
         .services-section h2 {
-            color: var(--primary-blue-dark);
+            color: var(--accent-gold-base);
         }
 
         .services-grid {
@@ -734,10 +782,10 @@
         }
 
         .service-card {
-            background-color: var(--off-white-bg);
+            background-color: var(--secondary-dark-bg);
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
             text-align: left;
             transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
             border: 2px solid transparent;
@@ -761,8 +809,8 @@
 
         .service-card:hover {
             transform: translateY(-15px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-            border-color: var(--accent-blue-light);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            border-color: var(--accent-gold-base); /* Gold border on hover */
         }
 
         .service-image-container {
@@ -775,12 +823,12 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: brightness(0.8);
+            filter: brightness(0.6) grayscale(0.2);
             transition: transform 0.4s ease, filter 0.4s ease;
         }
         .service-card:hover .service-image-container img {
             transform: scale(1.05);
-            filter: brightness(1);
+            filter: brightness(0.9) grayscale(0);
         }
 
         .service-content-overlay {
@@ -789,8 +837,16 @@
             left: 0;
             width: 100%;
             padding: 25px;
-            background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0));
-            color: var(--primary-white-bg);
+            background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
+            color: var(--white);
+        }
+        .service-card .overlay-link { /* Make the entire card clickable */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10; /* Above other content but below icon */
         }
 
         .service-icon-large {
@@ -798,9 +854,9 @@
             top: 25px;
             left: 25px;
             font-size: 3.5em;
-            color: var(--primary-blue-dark);
-            z-index: 1;
-            text-shadow: 0 0 10px rgba(0,0,0,0.2);
+            color: var(--accent-gold-base);
+            z-index: 1; /* Below the overlay link */
+            text-shadow: 0 0 10px rgba(0,0,0,0.5);
         }
         /* Specific icon adjustments for emergency */
         .service-icon-large.emergency {
@@ -820,15 +876,15 @@
         .service-card h3 {
             font-size: 1.8em;
             margin: 0;
-            color: var(--primary-white-bg);
+            color: var(--accent-gold-base);
             text-align: left;
             line-height: 1.2;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
 
         .service-card p {
             font-size: 0.95em;
-            color: var(--text-light-on-dark);
+            color: var(--text-light-subtle);
             margin-top: 5px;
             margin-bottom: 0;
             text-align: left;
@@ -837,10 +893,10 @@
 
         /* Your Comfort, Our Priority Section */
         .priority-section {
-            background-color: var(--off-white-bg);
+            background-color: var(--primary-dark-bg);
         }
         .priority-section h2 {
-            color: var(--primary-blue-dark);
+            color: var(--accent-gold-base);
         }
 
         .priority-grid {
@@ -850,10 +906,10 @@
         }
 
         .priority-card {
-            background-color: var(--primary-white-bg);
+            background-color: var(--secondary-dark-bg);
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
             text-align: left;
             transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
             border: 2px solid transparent;
@@ -873,8 +929,8 @@
 
         .priority-card:hover {
             transform: translateY(-15px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-            border-color: var(--accent-blue-light);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            border-color: var(--accent-gold-base);
         }
 
         .priority-card .image-overlay {
@@ -884,12 +940,12 @@
             top: 0; left: 0;
             background-size: cover;
             background-position: center;
-            filter: brightness(0.8);
+            filter: brightness(0.6) grayscale(0.2);
             transition: transform 0.4s ease, filter 0.4s ease;
         }
         .priority-card:hover .image-overlay {
             transform: scale(1.05);
-            filter: brightness(1);
+            filter: brightness(0.9) grayscale(0);
         }
 
         .priority-card-content {
@@ -898,22 +954,22 @@
             left: 0;
             width: 100%;
             padding: 25px;
-            background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0));
-            color: var(--primary-white-bg);
+            background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
+            color: var(--white);
         }
 
         .priority-card-content h3 {
             font-size: 1.8em;
             margin: 0;
-            color: var(--primary-white-bg);
+            color: var(--accent-gold-base);
             text-align: left;
             line-height: 1.2;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
 
         .priority-card-content p {
             font-size: 0.95em;
-            color: var(--text-light-on-dark);
+            color: var(--text-light-subtle);
             margin-top: 5px;
             margin-bottom: 0;
             text-align: left;
@@ -922,14 +978,14 @@
 
         /* Why Choose Us Section */
         .why-choose-us-section {
-            background-color: var(--primary-white-bg);
-            color: var(--text-dark);
+            background-color: var(--off-white); /* Light background for contrast */
+            color: var(--text-dark-contrast);
         }
         .why-choose-us-section h2 {
-            color: var(--primary-blue-dark);
+            color: var(--text-dark-contrast);
         }
         .why-choose-us-section h2::after {
-            background-color: var(--accent-blue-light);
+            background-color: var(--accent-gold-base);
         }
 
         .advantage-grid {
@@ -942,7 +998,7 @@
             text-align: center;
             padding: 40px 30px;
             border-radius: 15px;
-            background-color: var(--off-white-bg);
+            background-color: var(--primary-white-bg);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             transition: transform 0.4s ease, box-shadow 0.4s ease;
             transform: translateY(70px);
@@ -966,29 +1022,29 @@
 
         .advantage-item .icon-large {
             font-size: 4em;
-            color: var(--accent-blue-light);
+            color: var(--accent-gold-base); /* Icons in gold */
             margin-bottom: 25px;
         }
 
         .advantage-item h3 {
-            color: var(--primary-blue-dark);
+            color: var(--text-dark-contrast);
             font-size: 1.8em;
             margin-bottom: 15px;
         }
 
         .advantage-item p {
-            color: var(--text-dark);
+            color: var(--text-dark-contrast);
             font-size: 1em;
         }
 
         /* Testimonials Section */
         .testimonials-section {
-            background-color: var(--off-white-bg);
+            background-color: var(--secondary-dark-bg);
             position: relative;
             overflow: hidden;
         }
         .testimonials-section h2 {
-            color: var(--primary-blue-dark);
+            color: var(--accent-gold-base);
         }
 
         .testimonial-carousel {
@@ -1005,10 +1061,10 @@
             position: absolute;
             width: 85%;
             max-width: 800px;
-            background-color: var(--primary-white-bg);
+            background-color: var(--primary-dark-bg);
             padding: 50px;
             border-radius: 15px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
             text-align: center;
             opacity: 0;
             transform: translateX(-100%);
@@ -1018,7 +1074,7 @@
             align-items: center;
             justify-content: center;
             height: 100%;
-            color: var(--text-dark);
+            color: var(--off-white);
         }
 
         .testimonial-slide.active {
@@ -1032,28 +1088,28 @@
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 25px;
-            border: 4px solid var(--accent-blue-light);
-            box-shadow: 0 0 0 8px rgba(74, 144, 226, 0.2);
+            border: 4px solid var(--accent-gold-base); /* Gold border */
+            box-shadow: 0 0 0 8px rgba(184, 134, 11, 0.2); /* Gold halo */
         }
 
         .quote {
             font-style: italic;
             font-size: 1.4em;
-            color: var(--text-dark);
+            color: var(--off-white);
             margin-bottom: 20px;
             line-height: 1.5;
         }
 
         .patient-name {
             font-weight: 700;
-            color: var(--primary-blue-dark);
+            color: var(--accent-gold-base); /* Patient name in gold */
             font-size: 1.1em;
             margin-bottom: 15px;
         }
 
         .stars {
             font-size: 1.4em;
-            color: var(--accent-blue-light);
+            color: var(--accent-gold-base); /* All stars in gold */
         }
 
         .carousel-nav {
@@ -1065,7 +1121,7 @@
             display: inline-block;
             width: 15px;
             height: 15px;
-            background-color: var(--secondary-accent-gray);
+            background-color: rgba(255,255,255,0.3);
             border-radius: 50%;
             margin: 0 10px;
             cursor: pointer;
@@ -1073,48 +1129,50 @@
         }
 
         .dot.active {
-            background-color: var(--accent-blue-light);
+            background-color: var(--accent-gold-base);
             transform: scale(1.3);
         }
 
 
         /* Secondary CTA Section */
         .secondary-cta-section {
-            background-color: var(--primary-blue-dark);
+            background-color: var(--accent-gold-base);
             text-align: center;
-            color: var(--primary-white-bg);
+            color: var(--text-dark-contrast);
             padding: 80px 20px;
+            background-image: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--accent-gold-base) 100%);
         }
         .secondary-cta-section h2 {
-            color: var(--primary-white-bg);
+            color: var(--text-dark-contrast);
             font-size: 3.5em;
         }
         .secondary-cta-section h2::after {
-            background-color: var(--accent-blue-light);
+            background-color: var(--text-dark-contrast);
         }
         .secondary-cta-section p {
             font-size: 1.4em;
             margin-bottom: 40px;
-            color: var(--text-light-on-dark);
+            color: var(--text-dark-contrast);
             font-weight: 500;
         }
         .secondary-cta-section .btn-cta {
-            background-color: var(--accent-blue-light);
-            border-color: var(--accent-blue-light);
-            color: var(--primary-white-bg);
+            background-color: var(--primary-dark-bg);
+            border-color: var(--primary-dark-bg);
+            color: var(--accent-gold-base);
+            background-image: none; /* Remove gradient for CTA button here */
         }
         .secondary-cta-section .btn-cta:hover {
-            background-color: var(--primary-white-bg);
-            border-color: var(--primary-white-bg);
-            color: var(--primary-blue-dark);
+            background-color: var(--secondary-dark-bg);
+            border-color: var(--secondary-dark-bg);
+            color: var(--accent-gold-light);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
         }
 
 
         /* --- Footer --- */
         .main-footer {
-            background-color: var(--primary-blue-dark);
-            color: var(--text-light-on-dark);
+            background-color: var(--tertiary-dark-bg); /* Even darker footer */
+            color: var(--text-light-subtle);
             padding: 80px 0 30px;
             font-size: 0.95em;
         }
@@ -1127,7 +1185,7 @@
         }
 
         .footer-col h3 {
-            color: var(--accent-blue-light);
+            color: var(--accent-gold-base);
             font-size: 1.6em;
             margin-bottom: 25px;
         }
@@ -1141,31 +1199,31 @@
         }
 
         .footer-col ul li a {
-            color: var(--text-light-on-dark);
+            color: var(--text-light-subtle);
             transition: color 0.3s ease;
         }
 
         .footer-col ul li a:hover {
-            color: var(--accent-blue-light);
+            color: var(--accent-gold-base);
         }
 
         .footer-col p {
             margin-bottom: 12px;
-            color: var(--text-light-on-dark);
+            color: var(--text-light-subtle);
         }
 
         .footer-col p i {
             margin-right: 12px;
-            color: var(--accent-blue-light);
+            color: var(--accent-gold-base);
         }
         .footer-col .hours {
             font-weight: 700;
-            color: var(--accent-blue-light);
+            color: var(--accent-gold-light);
         }
 
         .footer-logo {
             margin-bottom: 25px;
-            filter: brightness(0) invert(1);
+            filter: brightness(0) invert(1); /* Ensure logo is white */
         }
 
         .social-icons {
@@ -1173,14 +1231,14 @@
         }
 
         .social-icons a {
-            color: var(--text-light-on-dark);
+            color: var(--text-light-subtle);
             font-size: 1.8em;
             margin-right: 20px;
             transition: color 0.3s ease, transform 0.3s ease;
         }
 
         .social-icons a:hover {
-            color: var(--accent-blue-light);
+            color: var(--accent-gold-base);
             transform: translateY(-5px);
         }
 
@@ -1188,13 +1246,13 @@
             text-align: center;
             padding-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--text-light-on-dark);
+            color: var(--text-light-subtle);
         }
         .footer-bottom a {
-            color: var(--text-light-on-dark);
+            color: var(--text-light-subtle);
         }
         .footer-bottom a:hover {
-            color: var(--accent-blue-light);
+            color: var(--accent-gold-base);
         }
 
         /* --- Global Easy Access Floating Button (FAB) --- */
@@ -1206,8 +1264,8 @@
         }
 
         .fab-main {
-            background-color: var(--accent-blue-light);
-            color: var(--primary-white-bg);
+            background-color: var(--accent-gold-base);
+            color: var(--text-dark-contrast);
             width: 70px;
             height: 70px;
             border-radius: 50%;
@@ -1219,10 +1277,12 @@
             cursor: pointer;
             transition: transform 0.3s ease, background-color 0.3s ease;
             animation: pulse 2s infinite;
+            background-image: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--accent-gold-base) 100%);
         }
         .fab-main:hover {
-            background-color: var(--primary-blue-dark);
+            background-color: var(--accent-gold-light);
             transform: scale(1.08);
+            background-image: linear-gradient(135deg, var(--accent-gold-base) 0%, var(--accent-gold-light) 100%);
         }
         .fab-main.active {
             transform: rotate(45deg);
@@ -1248,8 +1308,8 @@
         }
 
         .fab-option {
-            background-color: var(--primary-blue-dark);
-            color: var(--primary-white-bg);
+            background-color: var(--secondary-dark-bg);
+            color: var(--off-white);
             padding: 12px 18px;
             border-radius: 8px;
             text-align: right;
@@ -1269,26 +1329,26 @@
         }
 
         .fab-option:hover {
-            background-color: var(--accent-blue-light);
-            color: var(--primary-white-bg);
+            background-color: var(--accent-gold-base);
+            color: var(--text-dark-contrast);
             transform: translateX(-8px);
         }
 
         /* Specific FAB option colors - adjusted for new palette */
-        .fab-option.book-now { background-color: var(--accent-blue-light); color: var(--primary-white-bg); }
-        .fab-option.book-now:hover { background-color: var(--primary-blue-dark); }
-        .fab-option.call-us { background-color: var(--primary-blue-dark); }
-        .fab-option.call-us:hover { background-color: var(--accent-blue-light); color: var(--primary-white-bg); }
-        .fab-option.text-us { background-color: #5cb85c; } /* Keeping green for common association */
-        .fab-option.text-us:hover { background-color: #4CAF50; }
-        .fab-option.chat-now { background-color: #ffc107; color: var(--text-dark); } /* Keeping yellow for common association */
+        .fab-option.book-now { background-color: var(--accent-gold-base); color: var(--text-dark-contrast); background-image: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--accent-gold-base) 100%); }
+        .fab-option.book-now:hover { background-color: var(--accent-gold-light); }
+        .fab-option.call-us { background-color: var(--accent-gold-base); background-image: linear-gradient(135deg, var(--accent-gold-light) 0%, var(--accent-gold-base) 100%); color: var(--text-dark-contrast); } /* Call button is gold */
+        .fab-option.call-us:hover { background-color: var(--accent-gold-light); }
+        .fab-option.text-us { background-color: var(--accent-green-dark); } /* Text button is dark green */
+        .fab-option.text-us:hover { background-color: #3E6464; }
+        .fab-option.chat-now { background-color: #ffc107; color: var(--text-dark-contrast); } /* Keeping yellow for common association */
         .fab-option.chat-now:hover { background-color: #e0a800; }
 
 
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(74, 144, 226, 0.4); } /* Accent blue pulse */
-            70% { box-shadow: 0 0 0 25px rgba(74, 144, 226, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(74, 144, 226, 0); }
+            0% { box-shadow: 0 0 0 0 rgba(184, 134, 11, 0.4); } /* Gold pulse */
+            70% { box-shadow: 0 0 0 25px rgba(184, 134, 11, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(184, 134, 11, 0); }
         }
 
         /* --- Responsive Design --- */
@@ -1504,7 +1564,7 @@
     <header class="main-header">
         <div class="container header-content">
             <div class="logo">
-                <a href="/"><img src="https://source.unsplash.com/180x50/?dental-logo,blue" alt="Smiles R Us Logo"></a>
+                <a href="/"><img src="https://source.unsplash.com/180x50/?dental-logo,dark" alt="Smiles R Us Logo"></a>
             </div>
             <nav class="main-nav">
                 <ul>
@@ -1604,7 +1664,7 @@
         <div class="mobile-nav-overlay">
             <i class="fas fa-times close-btn"></i>
             <ul>
-                <li><a href="#" class="active">Home</a></li>
+                <li><a href="/" class="active">Home</a></li>
                 <li><a href="why-choose-us">About Us</a></li>
                 <li class="mobile-dropdown">
                     <a href="#">Our Services <i class="fas fa-chevron-down"></i></a>
@@ -1713,21 +1773,18 @@
             <a href="#about" class="scroll-down-arrow"><i class="fas fa-chevron-down"></i></a>
         </section>
 
-
-
-
         <section class="welcome-section reveal-on-scroll" id="about">
             <div class="container">
                 <div class="welcome-grid">
                     <div class="welcome-image reveal-left">
-                        <img src="https://i.ibb.co/G4ZKMcwq/Chat-GPT-Image-Jun-20-2025-11-33-43-PM.png" alt="Dentist Consulting Patient">
+                        <img src="https://source.unsplash.com/600x400/?dentist-patient,consultation,professional" alt="Dentist Consulting Patient">
                     </div>
                     <div class="welcome-content reveal-right">
                         <h2>WELCOME TO SMILES R US DENTISTRY!</h2>
-                        <p style="color: var(--text-dark);">
-                            You can now directly call and text the phone number of each office by selecting your preferred location or texting our main number below! We combine <strong style="color: var(--accent-blue-light);">compassionate care</strong> with <strong style="color: var(--accent-blue-light);">advanced technology</strong> to ensure every visit is comfortable and effective. Our <strong style="color: var(--accent-blue-light);">patient-centric approach</strong> means your unique needs are always our priority.
+                        <p style="color: var(--off-white);">
+                            You can now directly call and text the phone number of each office by selecting your preferred location or texting our main number below! We combine <strong style="color: var(--accent-gold-base);">compassionate care</strong> with <strong style="color: var(--accent-gold-base);">advanced technology</strong> to ensure every visit is comfortable and effective. Our <strong style="color: var(--accent-gold-base);">patient-centric approach</strong> means your unique needs are always our priority.
                         </p>
-                        <a href="why-choose-us" class="btn btn-outline-blue">Why Choose Us</a>
+                        <a href="why-choose-us" class="btn btn-outline-gold">Why Choose Us</a>
                     </div>
                 </div>
             </div>
@@ -1736,12 +1793,10 @@
         <section class="services-section reveal-on-scroll" id="services">
             <div class="container">
                 <h2>Our Services</h2>
-		
-				
                 <div class="services-grid">
                     <div class="service-card reveal-up">
                         <div class="service-image-container">
-                            <img src="https://i.ibb.co/LXg3Js2Q/Gemini-Generated-Image-111cqz111cqz111c.png" alt="Emergency Dental">
+                            <img src="https://source.unsplash.com/400x350/?emergency-dental,dentistry,urgent-care" alt="Emergency Dental">
                         </div>
                         <div class="service-icon-large emergency">
                             <i class="fas fa-tooth"></i><i class="fas fa-plus"></i>
@@ -1752,12 +1807,9 @@
                             <a href="emergency-care" class="overlay-link"></a>
                         </div>
                     </div>
-					
-				
-					
                     <div class="service-card reveal-up">
                         <div class="service-image-container">
-                            <img src="https://i.ibb.co/20m6pZQv/Chat-GPT-Image-Jun-22-2025-10-33-32-PM.png" alt="Dental Implants">
+                            <img src="https://source.unsplash.com/400x350/?dental-implants,tooth-implant,dentistry" alt="Dental Implants">
                         </div>
                         <div class="service-icon-large"><i class="fas fa-plus-square"></i></div>
                         <div class="service-content-overlay">
@@ -1766,11 +1818,9 @@
                             <a href="dental-implants" class="overlay-link"></a>
                         </div>
                     </div>
-					
-	
                     <div class="service-card reveal-up">
                         <div class="service-image-container">
-                            <img src="https://i.ibb.co/pjQmxP76/Gemini-Generated-Image-r59bghr59bghr59b.png" alt="Snap On Smile">
+                            <img src="https://source.unsplash.com/400x350/?snap-on-smile,cosmetic-dentistry,teeth" alt="Snap On Smile">
                         </div>
                         <div class="service-icon-large"><i class="fas fa-smile"></i></div>
                         <div class="service-content-overlay">
@@ -1779,11 +1829,9 @@
                             <a href="snap-on-smile" class="overlay-link"></a>
                         </div>
                     </div>
-					
-			  <div class="service-card reveal-up">
+                    <div class="service-card reveal-up">
                         <div class="service-image-container">
-						
-                            <img src="https://i.ibb.co/n8f8TfpG/image.png" alt="All on 4">
+                            <img src="https://source.unsplash.com/400x350/?dentures,prosthetics,all-on-4" alt="All on 4">
                         </div>
                         <div class="service-icon-large"><i class="fas fa-teeth"></i></div>
                         <div class="service-content-overlay">
@@ -1791,10 +1839,9 @@
                             <p>Put on Your Perfect Smile in an Instant.</p>
                             <a href="all-on-4" class="overlay-link"></a> </div>
                     </div>
-					
-					<div class="service-card reveal-up">
+                     <div class="service-card reveal-up">
                         <div class="service-image-container">
-                            <img src="https://i.ibb.co/mV59N1jW/Gemini-Generated-Image-ajyf0wajyf0wajyf.png" alt="General Dentistry">
+                            <img src="https://source.unsplash.com/400x350/?general-dentistry,dental-exam,checkup" alt="General Dentistry">
                         </div>
                         <div class="service-icon-large"><i class="fas fa-tooth"></i></div>
                         <div class="service-content-overlay">
@@ -1804,8 +1851,7 @@
                     </div>
                     <div class="service-card reveal-up">
                         <div class="service-image-container">
-						
-						  <img src="https://i.ibb.co/Qv19s9YG/Chat-GPT-Image-Jun-28-2025-07-45-40-PM.png" alt="Cosmetic Dentistry">
+                            <img src="https://source.unsplash.com/400x350/?cosmetic-dentistry,teeth-whitening,smile-makeover" alt="Cosmetic Dentistry">
                         </div>
                         <div class="service-icon-large"><i class="fas fa-star"></i></div>
                         <div class="service-content-overlay">
@@ -1823,24 +1869,21 @@
                 <h2>Your Comfort, Our Priority</h2>
                 <div class="priority-grid">
                     <div class="priority-card reveal-up">
-					
-		
-                        <div class="image-overlay" style="background-image: url('https://ibb.co/vCp6YPwD"><img src="https://i.ibb.co/xKWtHjC3/Blue-Pink-Tooth-Ache-Clean-Informative-Health-Hygiene-Dentist-Instagram-Post-1.png');"></div>
+                        <div class="image-overlay" style="background-image: url('https://source.unsplash.com/400x280/?emergency,medical,pain-relief');"></div>
                         <div class="priority-card-content">
                             <h3>Same Day Emergency</h3>
                             <p>Urgent dental care when you need it most.</p>
                         </div>
                     </div>
                     <div class="priority-card reveal-up">
-                        <div class="image-overlay" style="background-image: url('https://i.ibb.co/5WKxXxr1/Gemini-Generated-Image-bal9xsbal9xsbal9.png');"></div>
+                        <div class="image-overlay" style="background-image: url('https://source.unsplash.com/400x280/?insurance,finance,healthcare');"></div>
                         <div class="priority-card-content">
                             <h3>List of Insurance Accepted</h3>
                             <p>Financing options available.</p>
                         </div>
                     </div>
-					
- <div class="priority-card reveal-up">
-                        <div class="image-overlay" style="background-image: url('https://i.ibb.co/MyF7Fx0y/Blue-Pink-Tooth-Ache-Clean-Informative-Health-Hygiene-Dentist-Instagram-Post-2.png');"></div>
+                    <div class="priority-card reveal-up">
+                        <div class="image-overlay" style="background-image: url('https://source.unsplash.com/400x280/?discount,coupon,savings');"></div>
                         <div class="priority-card-content">
                             <h3>Discount Coupons</h3>
                             <p>Explore our special offers and savings.</p>
@@ -1853,7 +1896,7 @@
         <section class="locations-section reveal-on-scroll" id="locations">
             <div class="container">
                 <h2>Find Your Nearest Smiles R Us Location</h2>
-                <p class="intro-panel-text" style="color: var(--text-dark); text-align: center; margin-bottom: 40px;">
+                <p class="intro-panel-text" style="color: var(--text-light-subtle); text-align: center; margin-bottom: 40px;">
                     You can now directly call and text the phone number of each office by selecting your preferred location or texting our main number below!
                 </p>
                 <div class="location-grid">
@@ -1861,50 +1904,50 @@
                         <img src="https://source.unsplash.com/400x250/?dental-clinic-exterior,baltimore,garrison" alt="Baltimore-Garrison Clinic">
                         <h3>Baltimore-Garrison</h3>
                         <p>2300 Garrison Blvd, Ste 209<br>Baltimore, MD 21216</p>
-                        <p style="font-weight: bold; color: var(--primary-blue-dark);">410-947-0606</p>
+                        <p class="phone-number">410-947-0606</p>
                         <div class="branch-actions">
-                            <a href="tel:4109470606" class="btn btn-outline-blue btn-small">Call Now</a>
-                            <a href="sms:4109470606" class="btn btn-primary btn-small">Text Now</a>
+                            <a href="tel:4109470606" class="btn btn-primary btn-call">Call Now</a>
+                            <a href="sms:4109470606" class="btn btn-primary btn-text">Text Now</a>
                         </div>
                     </div>
                     <div class="location-card reveal-up" id="location-baltimore-reisterstown">
                         <img src="https://source.unsplash.com/400x250/?dental-clinic-interior,timonium,reisterstown" alt="Baltimore-Reisterstown Clinic">
                         <h3>Baltimore-Reisterstown</h3>
                         <p>2080 York Road, Suite 255<br>Timonium, MD 21093</p>
-                        <p style="font-weight: bold; color: var(--primary-blue-dark);">410-94-SMILE</p>
+                        <p class="phone-number">410-94-SMILE</p>
                         <div class="branch-actions">
-                            <a href="tel:4109476453" class="btn btn-outline-blue btn-small">Call Now</a>
-                            <a href="sms:4109476453" class="btn btn-primary btn-small">Text Now</a>
+                            <a href="tel:4109476453" class="btn btn-primary btn-call">Call Now</a>
+                            <a href="sms:4109476453" class="btn btn-primary btn-text">Text Now</a>
                         </div>
                     </div>
                     <div class="location-card reveal-up" id="location-ellicott-city">
                         <img src="https://source.unsplash.com/400x250/?dental-office,ellicott-city,reception" alt="Ellicott City Clinic">
                         <h3>Ellicott City</h3>
                         <p>9200 Baltimore National Pike, Ste E<br>Ellicott City, MD 21042</p>
-                        <p style="font-weight: bold; color: var(--primary-blue-dark);">410-480-9800</p>
+                        <p class="phone-number">410-480-9800</p>
                         <div class="branch-actions">
-                            <a href="tel:4104809800" class="btn btn-outline-blue btn-small">Call Now</a>
-                            <a href="sms:4104809800" class="btn btn-primary btn-small">Text Now</a>
+                            <a href="tel:4104809800" class="btn btn-primary btn-call">Call Now</a>
+                            <a href="sms:4104809800" class="btn btn-primary btn-text">Text Now</a>
                         </div>
                     </div>
                     <div class="location-card reveal-up" id="location-dundalk">
                         <img src="https://source.unsplash.com/400x250/?dental,dundalk,clinic" alt="Dundalk Clinic">
                         <h3>Dundalk</h3>
                         <p>1794 Merritt Blvd, Ste A<br>Dundalk, MD 21222</p>
-                        <p style="font-weight: bold; color: var(--primary-blue-dark);">410-282-9000</p>
+                        <p class="phone-number">410-282-9000</p>
                         <div class="branch-actions">
-                            <a href="tel:4102829000" class="btn btn-outline-blue btn-small">Call Now</a>
-                            <a href="sms:4102829000" class="btn btn-primary btn-small">Text Now</a>
+                            <a href="tel:4102829000" class="btn btn-primary btn-call">Call Now</a>
+                            <a href="sms:4102829000" class="btn btn-primary btn-text">Text Now</a>
                         </div>
                     </div>
                     <div class="location-card reveal-up" id="location-woodlawn">
                         <img src="https://source.unsplash.com/400x250/?dental-office,woodlawn,exterior" alt="Woodlawn Clinic">
                         <h3>Woodlawn</h3>
                         <p>6666 Security Boulevard, Ste 11<br>Woodlawn, MD 21207</p>
-                        <p style="font-weight: bold; color: var(--primary-blue-dark);">410-944-6666</p>
+                        <p class="phone-number">410-944-6666</p>
                         <div class="branch-actions">
-                            <a href="tel:4109446666" class="btn btn-outline-blue btn-small">Call Now</a>
-                            <a href="sms:4109446666" class="btn btn-primary btn-small">Text Now</a>
+                            <a href="tel:4109446666" class="btn btn-primary btn-call">Call Now</a>
+                            <a href="sms:4109446666" class="btn btn-primary btn-text">Text Now</a>
                         </div>
                     </div>
                 </div>
@@ -2018,7 +2061,7 @@
             <div class="footer-col">
                 <h3>Contact Us</h3>
                 <p><i class="fas fa-map-marker-alt"></i> Multiple Locations Across MD</p>
-                <p><i class="fas fa-phone-alt"></i> <a href="tel:4109470606">410-947-0606</a></p> <p><i class="fas fa-envelope"></i> <a href="mailto:info@smilesrus.com">info@smilesrus.com</a></p>
+                <p><i class="fas fa-phone-alt"></i> <a href="tel:410-947-0606">410-947-0606</a></p> <p><i class="fas fa-envelope"></i> <a href="mailto:info@smilesrus.com">info@smilesrus.com</a></p>
                 <p class="hours"><i class="fas fa-clock"></i> Mon-Fri: 9AM - 5PM</p>
             </div>
         </div>
@@ -2030,8 +2073,8 @@
     <div class="fab-container">
         <div class="fab-options">
             <a href="schedule-an-appointment" class="fab-option book-now"><i class="fas fa-calendar-alt"></i> <span>Book Now</span></a>
-            <a href="tel:4109470606" class="fab-option call-us"><i class="fas fa-phone-alt"></i> <span>Call Us</span></a>
-            <a href="sms:4109470606" class="fab-option text-us"><i class="fas fa-comment-dots"></i> <span>Text Us</span></a>
+            <a href="tel:410-947-0606" class="fab-option call-us"><i class="fas fa-phone-alt"></i> <span>Call Us</span></a>
+            <a href="sms:410-947-0606" class="fab-option text-us"><i class="fas fa-comment-dots"></i> <span>Text Us</span></a>
             <a href="contact" class="fab-option chat-now"><i class="fas fa-comments"></i> <span>Chat Now</span></a>
         </div>
         <div class="fab-main">
